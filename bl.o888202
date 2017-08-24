@@ -1,0 +1,16 @@
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    1
+   Working directory:  /scratch/02475/mstudiva/annotate
+   Processes per host: 1
+   Total processes:    1
+   Total jobs:         1
+   Scheduling method:  dynamic
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+Launcher: Task 0 running job 1 on nid00241 (tblastn -query 248.prots.fa -db transcriptome.fasta -evalue 1e-10 -outfmt "6 qseqid sseqid evalue bitscore qcovs" -max_target_seqs 1 -num_threads 12 >transcriptome_248.brtab)
+Launcher: Job 1 completed in 132 seconds.
+Launcher: Task 0 done. Exiting.
+Launcher: Done. Job exited without errors

@@ -1,0 +1,13 @@
+WARNING: LAUNCHER_WORKDIR variable not set. Using current directory.
+Warning: Permanently added '[nid00025]:6999,[10.128.0.26]:6999' (RSA) to the list of known hosts.
+Warning: Permanently added '[nid00028]:6999,[10.128.0.29]:6999' (RSA) to the list of known hosts.
+Warning: Permanently added '[nid00029]:6999,[10.128.0.30]:6999' (RSA) to the list of known hosts.
+Warning: Permanently added '[nid00030]:6999,[10.128.0.31]:6999' (RSA) to the list of known hosts.
+Warning: Permanently added '[nid00031]:6999,[10.128.0.32]:6999' (RSA) to the list of known hosts.
+Warning: Permanently added '[nid00024]:6999,[10.128.0.25]:6999' (RSA) to the list of known hosts.
+Warning: Permanently added '[nid00027]:6999,[10.128.0.28]:6999' (RSA) to the list of known hosts.
+Warning: Permanently added '[nid00026]:6999,[10.128.0.27]:6999' (RSA) to the list of known hosts.
+grep: invalid max count
+grep: invalid max count
+slurmstepd: *** JOB 887093 ON nid00024 CANCELLED AT 2017-06-15T14:15:12 DUE TO TIME LIMIT ***
+Killed by signal 15.

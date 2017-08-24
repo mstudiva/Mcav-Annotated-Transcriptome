@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH -J cds
+#SBATCH -n 1
+#SBATCH -p development
+#SBATCH -o cds.o%j
+#SBATCH -e cds.e%j
+#SBATCH -t 1:00:00
+#SBATCH -A mega2014
+
+module load launcher
+
+
+
+
+
+export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
+export LAUNCHER_RMI=SLURM
+export LAUNCHER_JOB_FILE=cds
+
+$LAUNCHER_DIR/paramrun

@@ -1,0 +1,1 @@
+getGOfromUniProtKB.pl blast=myblast.br prefix=transcriptome fastaQuery=transcriptome_iso.fasta
