@@ -1,1 +1,0 @@
-makeblastdb -in uniprot_sprot.fasta -dbtype prot
