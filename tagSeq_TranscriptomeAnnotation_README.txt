@@ -116,8 +116,8 @@ cat mcav_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | wc -l | awk '{prin
 # KOG annotation
 # scp your *_PRO.fas file to laptop, submit it to
 http://weizhong-lab.ucsd.edu/metagenomic-analysis/server/kog/
-cd /Users/Mike/Documents/Grad_School/Dissertation/Data/RNA_Seq/Transcriptome
-scp mstudiva@koko-login.fau.edu:/scratch/02475/mstudiva/annotate/*_PRO.fas .
+cd /path/to/local/directory
+scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/*_PRO.fas .
 
 # copy link to job ID status and output file, paste it below instead of current link:
 # check status: go on web to http://weizhong-lab.ucsd.edu/metagenomic-analysis/result/?jobid=95827620170616072315007524
@@ -140,7 +140,7 @@ grep -v "Multiple classes" mcav_iso2kogClass.tab | perl -pe 's/^comp/isogroup/' 
 fasta2SBH.pl mcav_iso.fasta >mcav_4kegg.fasta
 
 # scp mcav_4kegg.fasta to your laptop
-cd /Users/Mike/Documents/Grad_School/Dissertation/Data/RNA_Seq/Transcriptome
+cd /path/to/local/directory
 scp mstudiva@ls5.tacc.utexas.edu:/scratch/02475/mstudiva/annotate/mcav_4kegg.fasta .
 # use web browser to submit mcav_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
 # select SBH algorithm, upload nucleotide query
@@ -157,6 +157,6 @@ cat query.ko | awk '{if ($2!="") print }' > mcav_iso2kegg.tab
 
 #------------------------------
 # copy all files to laptop
-cd /Users/Mike/Documents/Grad_School/Dissertation/Data/RNA_Seq/Transcriptome
-scp mstudiva@ls5.tacc.utexas.edu:/scratch/02475/mstudiva/annotate/* .
+cd /path/to/local/directory
+scp mstudiva@ls5.tacc.utexas.edu:/path/to/HPC/directory/* .
 
