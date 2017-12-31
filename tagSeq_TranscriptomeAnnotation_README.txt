@@ -1,6 +1,7 @@
-# Transcriptome Annotation
+# Transcriptome Annotation, version Dec 31, 2017
 # Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (mstudiva@fau.edu) 
 # for use in generating transcriptome annotation files for Montastraea cavernosa
+# also includes the concatention of M. cav and Symbiodinium Clade C transcriptomes
 
 #------------------------------
 # BEFORE STARTING, replace, in this whole file:
@@ -36,15 +37,24 @@ wget http://meyerlab:coral@files.cgrb.oregonstate.edu/Meyer_Lab/transcriptomes/M
 gunzip Mcav_transcriptome_v1.fasta.gz
 mv Mcav_transcriptome_v1.fasta mcav.fasta
 
-# statistics: (takes a long time to run for some reason but works):
+# Download the Symbiodinium Clade C transcriptome to your HPC directory
+wget ftp://marchanon:anon@rc-ns-ftp.its.unc.edu/CladeC_Symbiodinium_transcriptome.zip
+unzip CladeC_Symbiodinium_transcriptome.zip
+mv CladeC_Symbiodinium_transcriptome/* .
+rm -rf CladeC_Symbiodinium_transcriptome/ CladeC_Symbiodinium_transcriptome.zip _MACOSX/
+
+# concatenate the host and symbiont transcriptomes into a holobiont transcriptome
+cat davies_cladeC_feb.fasta mcav.fasta > mcav_holobiont.fasta
+
+# statistics: (takes a long time to run for some reason)
 source activate bioperl
-seq_stats.pl mcav.fasta
+seq_stats.pl mcav_holobiont.fasta
 source deactivate bioperl
 
 # getting uniprot_swissprot KB database
 wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 
-# getting annotations (this file is over 3G, will take a while)
+# getting annotations (this file is over 3G, may take a while)
 echo 'wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz '> getz
 launcher_creator.py -j getz -n getz -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
 sbatch getz.slurm
@@ -60,7 +70,7 @@ launcher_creator.py -j mdb -n mdb -q shortq7 -t 2:00:00 -e mstudiva@fau.edu
 sbatch mdb.slurm
 
 # splitting the transcriptome into 190 chunks
-splitFasta.pl mcav.fasta 190
+splitFasta.pl mcav_holobiont.fasta 190
 
 # blasting all 190 chunks to uniprot in parallel, 4 cores per chunk
 module load blast
@@ -76,40 +86,40 @@ cat subset*br > myblast.br
 rm subset*
 
 # for trinity-assembled transcriptomes: annotating with "isogroup" (=component)
-grep ">" mcav.fasta | perl -pe 's/>comp(\d+)(\S+)\s.+/comp$1$2\tisogroup$1/' >mcav_seq2iso.tab
-cat mcav.fasta | perl -pe 's/>comp(\d+)(\S+).+/>comp$1$2 gene=isogroup$1/' >mcav_iso.fasta
+grep ">" mcav_holobiont.fasta | perl -pe 's/>comp(\d+)(\S+)\s.+/comp$1$2\tisogroup$1/' >mcav_holobiont_seq2iso.tab
+cat mcav_holobiont.fasta | perl -pe 's/>comp(\d+)(\S+).+/>comp$1$2 gene=isogroup$1/' >mcav_holobiont_iso.fasta
 
 #-------------------------
 
 # extracting gene names (per isogroup):
-getGeneNameFromUniProtKB.pl blast=myblast.br prefix=mcav fastaQuery=mcav_iso.fasta
+getGeneNameFromUniProtKB.pl blast=myblast.br prefix=mcav_holobiont fastaQuery=mcav_holobiont_iso.fasta
 
 # extracting GO annotations (per isogroup)
-echo "getGOfromUniProtKB.pl blast=myblast.br prefix=mcav fastaQuery=mcav_iso.fasta" >getgo
+echo "getGOfromUniProtKB.pl blast=myblast.br prefix=mcav_holobiont fastaQuery=mcav_holobiont_iso.fasta" >getgo
 launcher_creator.py -j getgo -n getgo -l gg -q shortq7 -t 2:00:00 -e mstudiva@fau.edu
 sbatch gg
 
 # extracting coding sequences and corresponding protein translations:
 source activate bioperl
-echo "perl ~/bin/CDS_extractor_v2.pl mcav_iso.fasta myblast.br allhits bridgegaps" >cds
+echo "perl ~/bin/CDS_extractor_v2.pl mcav_holobiont_iso.fasta myblast.br allhits bridgegaps" >cds
 launcher_creator.py -j cds -n cds -l cddd -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
 sbatch cddd
 source deactivate bioperl
 
 # calculating contiguity:
-contiguity.pl hits=mcav_iso_hits.tab threshold=0.75
+contiguity.pl hits=mcav_holobiont_iso_hits.tab threshold=0.75
 # 0.23
 
 # core gene set form korflab: to characterize representation of genes:
 wget http://korflab.ucdavis.edu/Datasets/genome_completeness/core/248.prots.fa.gz
 gunzip 248.prots.fa.gz
 
-makeblastdb -in mcav.fasta -dbtype nucl
-echo 'tblastn -query 248.prots.fa -db mcav.fasta -evalue 1e-10 -outfmt "6 qseqid sseqid evalue bitscore qcovs" -max_target_seqs 1 -num_threads 12 >mcav_248.brtab' >bl248
+makeblastdb -in mcav_holobiont.fasta -dbtype nucl
+echo 'tblastn -query 248.prots.fa -db mcav_holobiont.fasta -evalue 1e-10 -outfmt "6 qseqid sseqid evalue bitscore qcovs" -max_target_seqs 1 -num_threads 12 >mcav_holobiont_248.brtab' >bl248
 launcher_creator.py -j bl248 -n bl -l blj -q shortq7 -t 02:00:00 -e mstudiva@fau.edu
 sbatch blj
 # calculating fraction of represented KOGs:
-cat mcav_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | wc -l | awk '{print $1/248}'
+cat mcav_holobiont_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | wc -l | awk '{print $1/248}'
 # 0.991935
 
 #------------------------------
@@ -125,31 +135,31 @@ scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/*_PRO.fas .
 wget http://weizhong-lab.ucsd.edu/metagenomic-analysis/output/95827620170616072315007524/output.zip
 
 unzip output.zip
-mv output.2 mcav.kog.tab
+mv output.2 mcav_holobiont.kog.tab
 
 # generates iso2kogClass and iso2kogDef (another kind of gene names)
-getKOGs.pl fastaQuery=mcav_iso.fasta prefix=mcav kogMatch=mcav.kog.tab 
+getKOGs.pl fastaQuery=mcav_holobiont_iso.fasta prefix=mcav_holobiont kogMatch=mcav_holobiont.kog.tab 
 
 # removing "multiple classes" annotation, renaming comp to isogroup
-grep -v "Multiple classes" mcav_iso2kogClass.tab | perl -pe 's/^comp/isogroup/' > mcav_iso2kogClassNR.tab
+grep -v "Multiple classes" mcav_holobiont_iso2kogClass.tab | perl -pe 's/^comp/isogroup/' > mcav_holobiont_iso2kogClassNR.tab
 
 #------------------------------
 # KEGG annotations:
 
 # selecting the longest contig per isogroup:
-fasta2SBH.pl mcav_iso.fasta >mcav_4kegg.fasta
+fasta2SBH.pl mcav_holobiont_iso.fasta >mcav_holobiont_4kegg.fasta
 
-# scp mcav_4kegg.fasta to your laptop
+# scp mcav_holobiont_4kegg.fasta to your laptop
 cd /path/to/local/directory
-scp mstudiva@ls5.tacc.utexas.edu:/scratch/02475/mstudiva/annotate/mcav_4kegg.fasta .
-# use web browser to submit mcav_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
+scp mstudiva@ls5.tacc.utexas.edu:/scratch/02475/mstudiva/annotate/mcav_holobiont_4kegg.fasta .
+# use web browser to submit mcav_holobiont_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
 # select SBH algorithm, upload nucleotide query
 # Once it is done, download the 'text' output from KAAS, name it query.ko (default)
 
 wget http://www.genome.jp/tools/kaas/files/dl/1497646795/query.ko
 
 # selecting only the lines with non-missing annotation:
-cat query.ko | awk '{if ($2!="") print }' > mcav_iso2kegg.tab
+cat query.ko | awk '{if ($2!="") print }' > mcav_holobiont_iso2kegg.tab
 
 # the KEGG mapping result can be explored for completeness of transcriptome in terms of genes found,
 # use 'html' output link from KAAS result page, see how many proteins you have for conserved complexes and pathways,
