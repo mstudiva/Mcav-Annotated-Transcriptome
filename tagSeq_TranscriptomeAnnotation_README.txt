@@ -32,32 +32,71 @@ rm launcher_creator.py
 mkdir annotate
 cd annotate
 
-# getting transcritpome to play with
-wget http://meyerlab:coral@files.cgrb.oregonstate.edu/Meyer_Lab/transcriptomes/Mcav/Mcav_transcriptome_v1.fasta.gz
-gunzip Mcav_transcriptome_v1.fasta.gz
-mv Mcav_transcriptome_v1.fasta mcav.fasta
+# M. cavernosa transcriptome, v1 (2014)
+# wget http://meyerlab:coral@files.cgrb.oregonstate.edu/Meyer_Lab/transcriptomes/Mcav/Mcav_transcriptome_v1.fasta.gz
+# gunzip Mcav_transcriptome_v1.fasta.gz
+# mv Mcav_transcriptome_v1.fasta mcav.fasta
 
-# Download the Symbiodinium Clade C transcriptome to your HPC directory
-wget ftp://marchanon:anon@rc-ns-ftp.its.unc.edu/CladeC_Symbiodinium_transcriptome.zip
+# updated (July 2018) M. cavernosa genome with transcriptome
+wget https://www.dropbox.com/s/0inwmljv6ti643o/Mcavernosa_genome.tgz
+tar -xzf Mcavernosa_genome.tgz
+cd Mcav_genome/Mcavernosa_annotation/
+cp Mcavernosa.maker.transcripts.fasta ../..
+mv Mcavernosa.maker.transcripts.fasta mcav.fasta
+
+# Symbiodinium Clade C transcriptome (mid 2017)
+# wget ftp://marchanon:anon@rc-ns-ftp.its.unc.edu/CladeC_Symbiodinium_transcriptome.zip
+# unzip CladeC_Symbiodinium_transcriptome.zip
+# mv CladeC_Symbiodinium_transcriptome/* .
+# rm -rf CladeC_Symbiodinium_transcriptome/ CladeC_Symbiodinium_transcriptome.zip _MACOSX/
+
+# Cladocopium sp. (formerly Symbiodinium Clade C) transcriptome as of November 2017
+wget http://sites.bu.edu/davieslab/files/2017/11/CladeC_Symbiodinium_transcriptome.zip
 unzip CladeC_Symbiodinium_transcriptome.zip
 mv CladeC_Symbiodinium_transcriptome/* .
-rm -rf CladeC_Symbiodinium_transcriptome/ CladeC_Symbiodinium_transcriptome.zip _MACOSX/
+rm -rf CladeC_Symbiodinium_transcriptome/ CladeC_Symbiodinium_transcriptome.zip __MACOSX/
+mv davies_cladeC_feb.fasta symC.fasta
+mv davies_cladeC_iso2go.tab symC_iso2go.tab
+mv davies_cladeC_iso2gene.tab symC_iso2gene.tab
+mv davies_cladeC_seq2iso.tab symC_seq2iso.tab
+
+# use the stream editor to find and replace all instances of "comp" and "isogroup" with "sym" in the symbiont transcriptome files
+sed -i 's/comp/sym/g' symC_seq2iso.tab
+sed -i 's/comp/sym/g' symC.fasta
+sed -i 's/isogroup/sym/g' symC_iso2gene.tab
+sed -i 's/isogroup/sym/g' symC_iso2go.tab
+sed -i 's/isogroup/sym/g' symC_seq2iso.tab
 
 # concatenate the host and symbiont transcriptomes into a holobiont transcriptome
-cat davies_cladeC_feb.fasta mcav.fasta > mcav_holobiont.fasta
+cat symC.fasta mcav.fasta > mcav_holobiont.fasta
 
-# statistics: (takes a long time to run for some reason)
+# transcriptome statistics
 source activate bioperl
 seq_stats.pl mcav_holobiont.fasta
 source deactivate bioperl
 
+# mcav_holobiont.fasta
+# -------------------------
+# 90980 sequences.
+# 1465 average length.
+# 43960 maximum length.
+# 75 minimum length.
+# N50 = 1798
+# 133.3 Mb altogether (133273996 bp).
+# 0 ambiguous Mb. (1637 bp, 0%)
+# 0 Mb of Ns. (1637 bp, 0%)
+# -------------------------
+
 # getting uniprot_swissprot KB database
 wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 
-# getting annotations (this file is over 3G, may take a while)
+# getting annotations (this file is large, may take a while)
 echo 'wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz '> getz
 launcher_creator.py -j getz -n getz -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
 sbatch getz.slurm
+
+# if the US mirror is down, use the line below, then run the getz script as normal
+echo 'wget ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz '> getz
 
 # unzipping
 gunzip uniprot_sprot.fasta.gz &
@@ -75,7 +114,7 @@ splitFasta.pl mcav_holobiont.fasta 190
 # blasting all 190 chunks to uniprot in parallel, 4 cores per chunk
 module load blast
 ls subset* | perl -pe 's/^(\S+)$/blastx -query $1 -db uniprot_sprot\.fasta -evalue 0\.0001 -num_threads 4 -num_descriptions 5 -num_alignments 5 -out $1.br/'>bl
-launcher_creator.py -j bl -n blast -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
+launcher_creator.py -j bl -n blast -t 2:00:00 -q shortq7 -N 8 -e mstudiva@fau.edu
 sbatch blast.slurm
 
 # watching progress:
@@ -85,10 +124,9 @@ grep "Query= " subset*.br | wc -l
 cat subset*br > myblast.br
 rm subset*
 
-# for trinity-assembled transcriptomes: annotating with "isogroup" (=component)
-grep ">" mcav_holobiont.fasta | perl -pe 's/>comp(\d+)(\S+)\s.+/comp$1$2\tisogroup$1/' >mcav_holobiont_seq2iso.tab
-cat mcav_holobiont.fasta | perl -pe 's/>comp(\d+)(\S+).+/>comp$1$2 gene=isogroup$1/' >mcav_holobiont_iso.fasta
-
+# for trinity-assembled transcriptomes: annotating with "sym" or "Mcavernosa" depending on if component is from symbiont or host (=component)
+grep ">" mcav_holobiont.fasta | perl -pe 's/>sym(\d+)(\S+)\s.+/sym$1$2\tsym$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+)\s.+/Mcavernosa$1$2\tMcavernosa$1/'>mcav_holobiont_seq2iso.tab
+cat mcav_holobiont.fasta | perl -pe 's/>sym(\d+)(\S+).+/>sym$1$2 gene=sym$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+).+/>Mcavernosa$1$2 gene=Mcavernosa$1/'>mcav_holobiont_iso.fasta
 #-------------------------
 
 # extracting gene names (per isogroup):
@@ -108,7 +146,7 @@ source deactivate bioperl
 
 # calculating contiguity:
 contiguity.pl hits=mcav_holobiont_iso_hits.tab threshold=0.75
-# 0.23
+# 0.38
 
 # core gene set form korflab: to characterize representation of genes:
 wget http://korflab.ucdavis.edu/Datasets/genome_completeness/core/248.prots.fa.gz
@@ -120,22 +158,25 @@ launcher_creator.py -j bl248 -n bl -l blj -q shortq7 -t 02:00:00 -e mstudiva@fau
 sbatch blj
 # calculating fraction of represented KOGs:
 cat mcav_holobiont_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | wc -l | awk '{print $1/248}'
-# 0.991935
+# 0.959677
 
 #------------------------------
 # KOG annotation
 # scp your *_PRO.fas file to laptop, submit it to
-http://weizhong-lab.ucsd.edu/metagenomic-analysis/server/kog/
+http://weizhong-lab.ucsd.edu/webMGA/server/kog/
 cd /path/to/local/directory
 scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/*_PRO.fas .
 
 # copy link to job ID status and output file, paste it below instead of current link:
-# check status: go on web to http://weizhong-lab.ucsd.edu/metagenomic-analysis/result/?jobid=95827620170616072315007524
-# once it is done, download results:
-wget http://weizhong-lab.ucsd.edu/metagenomic-analysis/output/95827620170616072315007524/output.zip
+# check status: go on web to http://weizhong-lab.ucsd.edu/webMGA/result/?jobid=20180912075910950229025904
+# once it is done, download results to HPC:
+wget http://weizhong-lab.ucsd.edu/webMGA/result/output/20180912075910950229025904.zip
 
-unzip output.zip
-mv output.2 mcav_holobiont.kog.tab
+unzip 20180912075910950229025904.zip
+mv kog/* .
+rm -rf kog/
+# As of 9/13/18, there is a problem with the webMGA KOG annotation where the correct output files are not being produced. I was informed that they are working on it.
+# But, as a result, the following lines of code in this section do not currently work.
 
 # generates iso2kogClass and iso2kogDef (another kind of gene names)
 getKOGs.pl fastaQuery=mcav_holobiont_iso.fasta prefix=mcav_holobiont kogMatch=mcav_holobiont.kog.tab 
@@ -151,12 +192,13 @@ fasta2SBH.pl mcav_holobiont_iso.fasta >mcav_holobiont_4kegg.fasta
 
 # scp mcav_holobiont_4kegg.fasta to your laptop
 cd /path/to/local/directory
-scp mstudiva@ls5.tacc.utexas.edu:/scratch/02475/mstudiva/annotate/mcav_holobiont_4kegg.fasta .
+scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/mcav_holobiont_4kegg.fasta .
 # use web browser to submit mcav_holobiont_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
-# select SBH algorithm, upload nucleotide query
+# select SBH method, upload nucleotide query
 # Once it is done, download the 'text' output from KAAS, name it query.ko (default)
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1536766154&key=v6N9KqeR
 
-wget http://www.genome.jp/tools/kaas/files/dl/1497646795/query.ko
+wget https://www.genome.jp/tools/kaas/files/dl/1536766154/query.ko
 
 # selecting only the lines with non-missing annotation:
 cat query.ko | awk '{if ($2!="") print }' > mcav_holobiont_iso2kegg.tab
@@ -168,5 +210,4 @@ cat query.ko | awk '{if ($2!="") print }' > mcav_holobiont_iso2kegg.tab
 #------------------------------
 # copy all files to laptop
 cd /path/to/local/directory
-scp mstudiva@ls5.tacc.utexas.edu:/path/to/HPC/directory/* .
-
+scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/* .
