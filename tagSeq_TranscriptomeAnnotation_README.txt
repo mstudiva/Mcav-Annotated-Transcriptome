@@ -1,18 +1,18 @@
-# Transcriptome Annotation, version Dec 31, 2017
-# Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (mstudiva@fau.edu) 
+# Transcriptome Annotation, version Feb 7, 2019
+# Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (mstudiva@fau.edu)
 # for use in generating transcriptome annotation files for Montastraea cavernosa
-# also includes the concatention of M. cav and Symbiodinium Clade C transcriptomes
+# also includes the concatention of M. cavernosa and Cladocopium sp. (formerly Symbiodinium Clade C) transcriptomes
 
 #------------------------------
 # BEFORE STARTING, replace, in this whole file:
 #	- mstudiva@fau.edu by your actual email;
 #	- mstudiva with your KoKo user name.
 
-# The idea is to copy the chunks separated by empty lines below and paste them into your cluster 
-# terminal window consecutively. 
+# The idea is to copy the chunks separated by empty lines below and paste them into your cluster
+# terminal window consecutively.
 
-# The lines beginning with hash marks (#) are explanations and additional instructions - 
-# please make sure to read them before copy-pasting. 
+# The lines beginning with hash marks (#) are explanations and additional instructions -
+# please make sure to read them before copy-pasting.
 
 #------------------------------
 # To install Bioperl in your bin directory, please follow these instructions:
@@ -21,17 +21,22 @@ module load python/anaconda
 conda create -y -n bioperl perl-bioperl
 
 # getting scripts
-
 cd ~/bin
 git clone https://github.com/z0on/annotatingTranscriptomes.git
 mv annotatingTranscriptomes/* .
 rm -rf annotatingTranscriptomes
 rm launcher_creator.py
 
+git clone https://github.com/z0on/emapper_to_GOMWU_KOGMWU.git
+mv emapper_to_GOMWU_KOGMWU/* .
+rm -rf emapper_to_GOMWU_KOGMWU
+
 # creating annotation dir
+cd
 mkdir annotate
 cd annotate
 
+# old version, commented out for now
 # M. cavernosa transcriptome, v1 (2014)
 # wget http://meyerlab:coral@files.cgrb.oregonstate.edu/Meyer_Lab/transcriptomes/Mcav/Mcav_transcriptome_v1.fasta.gz
 # gunzip Mcav_transcriptome_v1.fasta.gz
@@ -42,8 +47,10 @@ wget https://www.dropbox.com/s/0inwmljv6ti643o/Mcavernosa_genome.tgz
 tar -xzf Mcavernosa_genome.tgz
 cd Mcav_genome/Mcavernosa_annotation/
 cp Mcavernosa.maker.transcripts.fasta ../..
+cd ../..
 mv Mcavernosa.maker.transcripts.fasta mcav.fasta
 
+# old version, commented out for now
 # Symbiodinium Clade C transcriptome (mid 2017)
 # wget ftp://marchanon:anon@rc-ns-ftp.its.unc.edu/CladeC_Symbiodinium_transcriptome.zip
 # unzip CladeC_Symbiodinium_transcriptome.zip
@@ -127,15 +134,16 @@ rm subset*
 # for trinity-assembled transcriptomes: annotating with "sym" or "Mcavernosa" depending on if component is from symbiont or host (=component)
 grep ">" mcav_holobiont.fasta | perl -pe 's/>sym(\d+)(\S+)\s.+/sym$1$2\tsym$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+)\s.+/Mcavernosa$1$2\tMcavernosa$1/'>mcav_holobiont_seq2iso.tab
 cat mcav_holobiont.fasta | perl -pe 's/>sym(\d+)(\S+).+/>sym$1$2 gene=sym$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+).+/>Mcavernosa$1$2 gene=Mcavernosa$1/'>mcav_holobiont_iso.fasta
-#-------------------------
 
+#-------------------------
+# old code, commenting out for now
 # extracting gene names (per isogroup):
-getGeneNameFromUniProtKB.pl blast=myblast.br prefix=mcav_holobiont fastaQuery=mcav_holobiont_iso.fasta
+# getGeneNameFromUniProtKB.pl blast=myblast.br prefix=mcav_holobiont fastaQuery=mcav_holobiont_iso.fasta
 
 # extracting GO annotations (per isogroup)
-echo "getGOfromUniProtKB.pl blast=myblast.br prefix=mcav_holobiont fastaQuery=mcav_holobiont_iso.fasta" >getgo
-launcher_creator.py -j getgo -n getgo -l gg -q shortq7 -t 2:00:00 -e mstudiva@fau.edu
-sbatch gg
+# echo "getGOfromUniProtKB.pl blast=myblast.br prefix=mcav_holobiont fastaQuery=mcav_holobiont_iso.fasta" >getgo
+# launcher_creator.py -j getgo -n getgo -l gg -q shortq7 -t 2:00:00 -e mstudiva@fau.edu
+# sbatch gg
 
 # extracting coding sequences and corresponding protein translations:
 source activate bioperl
@@ -148,7 +156,7 @@ source deactivate bioperl
 contiguity.pl hits=mcav_holobiont_iso_hits.tab threshold=0.75
 # 0.38
 
-# core gene set form korflab: to characterize representation of genes:
+# core gene set from korflab: to characterize representation of genes:
 wget http://korflab.ucdavis.edu/Datasets/genome_completeness/core/248.prots.fa.gz
 gunzip 248.prots.fa.gz
 
@@ -161,28 +169,39 @@ cat mcav_holobiont_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | wc -l | 
 # 0.959677
 
 #------------------------------
-# KOG annotation
+# GO annotation
+
 # scp your *_PRO.fas file to laptop, submit it to
-http://weizhong-lab.ucsd.edu/webMGA/server/kog/
+http://eggnogdb.embl.de/#/app/emapper
 cd /path/to/local/directory
-scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/*_PRO.fas .
+scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/*_PRO.fas .
 
 # copy link to job ID status and output file, paste it below instead of current link:
-# check status: go on web to http://weizhong-lab.ucsd.edu/webMGA/result/?jobid=20180912075910950229025904
+# check status: go on web to http://eggnogdb.embl.de/#/app/emapper?jobname=MM_7_Z9m9
 # once it is done, download results to HPC:
-wget http://weizhong-lab.ucsd.edu/webMGA/result/output/20180912075910950229025904.zip
+wget http://eggnogdb.embl.de/MM_7_Z9m9/mcav_holobiont_iso_PRO.fas.emapper.annotations
 
-unzip 20180912075910950229025904.zip
-mv kog/* .
-rm -rf kog/
-# As of 9/13/18, there is a problem with the webMGA KOG annotation where the correct output files are not being produced. I was informed that they are working on it.
-# But, as a result, the following lines of code in this section do not currently work.
+# GO:
+awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$6 }' mcav_holobiont_iso_PRO.fas.emapper.annotations | grep GO | perl -pe 's/,/;/g' >mcav_holobiont_gene2go.tab
+# gene names:
+awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$13 }' mcav_holobiont_iso_PRO.fas.emapper.annotations | grep -Ev "\tNA" >mcav_holobiont_gene2geneName.tab
 
+#------------------------------
+# KOG annotation
+
+mv ~/bin/kog_classes.txt .
+
+#  KOG classes (single-letter):
+awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$12 }' mcav_holobiont_iso_PRO.fas.emapper.annotations | grep -Ev "[,#S]" >mcav_holobiont_gene2kogClass1.tab
+# converting single-letter KOG classes to text understood by KOGMWU package (must have kog_classes.txt file in the same dir):
+awk 'BEGIN {FS=OFS="\t"} NR==FNR {a[$1] = $2;next} {print $1,a[$2]}' kog_classes.txt mcav_holobiont_gene2kogClass1.tab > mcav_holobiont_gene2kogClass.tab
+
+# old code, commenting out for now
 # generates iso2kogClass and iso2kogDef (another kind of gene names)
-getKOGs.pl fastaQuery=mcav_holobiont_iso.fasta prefix=mcav_holobiont kogMatch=mcav_holobiont.kog.tab 
+# getKOGs.pl fastaQuery=mcav_holobiont_iso.fasta prefix=mcav_holobiont kogMatch=mcav_holobiont.kog.tab
 
 # removing "multiple classes" annotation, renaming comp to isogroup
-grep -v "Multiple classes" mcav_holobiont_iso2kogClass.tab | perl -pe 's/^comp/isogroup/' > mcav_holobiont_iso2kogClassNR.tab
+# grep -v "Multiple classes" mcav_holobiont_iso2kogClass.tab | perl -pe 's/^comp/isogroup/' > mcav_holobiont_iso2kogClassNR.tab
 
 #------------------------------
 # KEGG annotations:
@@ -192,13 +211,13 @@ fasta2SBH.pl mcav_holobiont_iso.fasta >mcav_holobiont_4kegg.fasta
 
 # scp mcav_holobiont_4kegg.fasta to your laptop
 cd /path/to/local/directory
-scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/mcav_holobiont_4kegg.fasta .
+scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/mcav_holobiont_4kegg.fasta .
 # use web browser to submit mcav_holobiont_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
 # select SBH method, upload nucleotide query
 # Once it is done, download the 'text' output from KAAS, name it query.ko (default)
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1536766154&key=v6N9KqeR
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1550845868&key=h7cIpELd
 
-wget https://www.genome.jp/tools/kaas/files/dl/1536766154/query.ko
+wget https://www.genome.jp/tools/kaas/files/dl/1550845868/query.ko
 
 # selecting only the lines with non-missing annotation:
 cat query.ko | awk '{if ($2!="") print }' > mcav_holobiont_iso2kegg.tab
@@ -210,4 +229,4 @@ cat query.ko | awk '{if ($2!="") print }' > mcav_holobiont_iso2kegg.tab
 #------------------------------
 # copy all files to laptop
 cd /path/to/local/directory
-scp mstudiva@koko-login.fau.edu:/path/to/HPC/directory/* .
+scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/* .
