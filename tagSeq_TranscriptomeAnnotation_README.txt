@@ -82,18 +82,6 @@ source activate bioperl
 seq_stats.pl mcav_holobiont.fasta
 source deactivate bioperl
 
-# mcav_holobiont.fasta
-# -------------------------
-# 90980 sequences.
-# 1465 average length.
-# 43960 maximum length.
-# 75 minimum length.
-# N50 = 1798
-# 133.3 Mb altogether (133273996 bp).
-# 0 ambiguous Mb. (1637 bp, 0%)
-# 0 Mb of Ns. (1637 bp, 0%)
-# -------------------------
-
 # getting uniprot_swissprot KB database
 wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 
@@ -170,6 +158,7 @@ cat mcav_holobiont_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | wc -l | 
 
 #------------------------------
 # GO annotation
+# updated based on Misha Matz's new GO and KOG annotation steps on github: https://github.com/z0on/emapper_to_GOMWU_KOGMWU
 
 # scp your *_PRO.fas file to laptop, submit it to
 http://eggnogdb.embl.de/#/app/emapper
@@ -188,6 +177,7 @@ awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$13 }' mcav_holobiont_iso_PRO.fas.emappe
 
 #------------------------------
 # KOG annotation
+# updated based on Misha Matz's new GO and KOG annotation steps on github: https://github.com/z0on/emapper_to_GOMWU_KOGMWU
 
 mv ~/bin/kog_classes.txt .
 
