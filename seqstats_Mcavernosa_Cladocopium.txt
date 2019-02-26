@@ -1,0 +1,13 @@
+seq_stats.pl mcav_holobiont.fasta
+
+# mcav_holobiont.fasta
+# -------------------------
+# 90980 sequences.
+# 1465 average length.
+# 43960 maximum length.
+# 75 minimum length.
+# N50 = 1798
+# 133.3 Mb altogether (133273996 bp).
+# 0 ambiguous Mb. (1637 bp, 0%)
+# 0 Mb of Ns. (1637 bp, 0%)
+# -------------------------
