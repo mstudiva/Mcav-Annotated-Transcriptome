@@ -1,4 +1,4 @@
-# Transcriptome Annotation, version Feb 7, 2019
+# Transcriptome Annotation, version Apr 8, 2019
 # Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (mstudiva@fau.edu)
 # for use in generating transcriptome annotation files for Montastraea cavernosa
 # also includes the concatention of M. cavernosa and Cladocopium sp. (formerly Symbiodinium Clade C) transcriptomes
