@@ -624,7 +624,7 @@ Cladocopium265630_c0_seq1	Part of a stress-induced multi-chaperone system, it is
 Cladocopium265637_c0_seq1	PAM
 Cladocopium265644_c0_seq1	whole genome shotgun sequence
 Cladocopium265646_c0_seq1	Divalent cation transporter
-Cladocopium265649_c0_seq1	na solute Cladocopiumporter
+Cladocopium265649_c0_seq1	na solute symporter
 Cladocopium265651_c0_seq1	Coatomer protein complex, subunit zeta 2
 Cladocopium265654_c0_seq1	ATP binding calcium ion binding calmodulin-dependent protein kinase protein kinase protein serine threonine kinase
 Cladocopium265660_c0_seq1	FeS assembly protein SufD
@@ -1992,7 +1992,7 @@ Cladocopium274404_c0_seq1	thymidylate synthase
 Cladocopium274407_c0_seq1	ring finger protein 5, E3 ubiquitin protein ligase
 Cladocopium274416_c0_seq1	mannose receptor, C type 1
 Cladocopium274420_c0_seq1	ankyrin repeat domain 50
-Cladocopium274424_c0_seq1	HscB iron-sulfur cluster co-chaperone homolog (E. coli)
+Cladocopium274424_c0_seq1	Co-chaperone protein HscB
 Cladocopium274427_c0_seq1	Inherit from COG: Catalyzes the reversible adenylation of nicotinate mononucleotide (NaMN) to nicotinic acid adenine dinucleotide (NaAD) (By similarity)
 Cladocopium274430_c0_seq1	Proteasome-associated protein ECM29 homolog
 Cladocopium274446_c0_seq1	B9 protein domain 2
@@ -4448,7 +4448,7 @@ Cladocopium293979_c0_seq1	Sad1 / UNC-like C-terminal
 Cladocopium293982_c0_seq1	ankyrin 3, node of Ranvier (ankyrin G)
 Cladocopium293992_c0_seq1	Protein kinase AMP-activated alpha
 Cladocopium293997_c0_seq1	Cyclin, N-terminal domain
-Cladocopium294000_c0_seq1	Responsible for the transport of sucrose into the cell, with the concomitant uptake of protons (Cladocopiumport system). May also transport other glucosides (By similarity)
+Cladocopium294000_c0_seq1	Responsible for the transport of sucrose into the cell, with the concomitant uptake of protons (symport system). May also transport other glucosides (By similarity)
 Cladocopium294029_c0_seq1	Cysteine synthase
 Cladocopium294033_c0_seq1	mitogen-activated protein kinase kinase kinase
 Cladocopium294039_c0_seq1	Inherit from KOG: Eukaryotic translation initiation factor 4 gamma
@@ -4774,7 +4774,7 @@ Cladocopium295079_c0_seq1	SET
 Cladocopium295100_c0_seq1	dolicholphosphate mannosyltransferase
 Cladocopium295103_c0_seq1	Non-photochemical quenching 1
 Cladocopium295118_c0_seq1	Glutaredoxin 3
-Cladocopium295130_c0_seq1	Sodium Bile acid Cladocopiumporter family
+Cladocopium295130_c0_seq1	Sodium Bile acid symporter family
 Cladocopium295138_c0_seq1	DnaJ (Hsp40) homolog subfamily C member
 Cladocopium295151_c0_seq1	Zinc finger, CCHC domain containing
 Cladocopium295156_c0_seq1	2-oxoglutarate and iron-dependent oxygenase domain containing 2
@@ -6439,7 +6439,7 @@ Cladocopium312791_c0_seq1	Ankyrin Repeat Protein
 Cladocopium312801_c0_seq1	FAD binding domain
 Cladocopium312808_c0_seq1	
 Cladocopium312857_c0_seq1	calcium calmodulin-dependent protein kinase
-Cladocopium312934_c0_seq1	Sodium:sulfate Cladocopiumporter transmembrane region
+Cladocopium312934_c0_seq1	Sodium:sulfate symporter transmembrane region
 Cladocopium312941_c0_seq1	NB-ARC domain
 Cladocopium312953_c0_seq1	Sel1 domain protein repeat-containing protein
 Cladocopium312967_c0_seq1	ATPase CA transporting
@@ -10590,7 +10590,7 @@ Mcavernosa13816-RA	Phosphopantetheine attachment site
 Mcavernosa13819-RA	Calnexin
 Mcavernosa13826-RA	Polymerase (DNA directed), mu
 Mcavernosa13821-RA	coiled-coil domain containing 22
-Mcavernosa13823-RA	solute carrier family 36 (proton amino acid Cladocopiumporter), member
+Mcavernosa13823-RA	solute carrier family 36 (proton amino acid symporter), member
 Mcavernosa13820-RA	Mannosyl (Alpha-1,3-)-glycoprotein beta-1,4-N-acetylglucosaminyltransferase, isozyme
 Mcavernosa13828-RA	Pyrazinamidase
 Mcavernosa13825-RA	Inherit from opiNOG: G protein-coupled receptor 101
@@ -10852,6 +10852,61 @@ Mcavernosa27858-RA	Zinc finger, NFX1-type containing 1
 Mcavernosa27868-RA	
 Mcavernosa27865-RA	Zinc finger, NFX1-type containing 1
 Mcavernosa27867-RA	
+Mcavernosa27863-RA	Zinc finger, NFX1-type containing 1
+Mcavernosa27862-RA	Zinc finger, NFX1-type containing 1
+Mcavernosa27877-RA	ATP-binding cassette, sub-family D (ALD), member
+Mcavernosa27870-RA	
+Mcavernosa27876-RA	ATP-binding cassette, sub-family D (ALD), member
+Mcavernosa27872-RA	
+Mcavernosa27884-RA	4-hydroxy-2-oxoglutarate aldolase 1
+Mcavernosa27882-RA	Protein of unknown function (DUF2475)
+Mcavernosa27886-RA	Nicotinamide nucleotide adenylyltransferase
+Mcavernosa27881-RA	nitric oxide associated 1
+Mcavernosa27879-RA	DDHD domain containing
+Mcavernosa27887-RA	Casein kinase 1, alpha 1
+Mcavernosa27890-RA	serine threonine kinase
+Mcavernosa27892-RA	protein regulator of cytokinesis 1
+Mcavernosa27895-RA	kinase non-catalytic C-lobe domain (KIND) containing 1
+Mcavernosa27891-RA	Inherit from opiNOG: kinase non-catalytic C-lobe domain (KIND) containing 1
+Mcavernosa27900-RA	Solute carrier family 18 (Vesicular monoamine), member
+Mcavernosa27896-RA	protein regulator of cytokinesis 1
+Mcavernosa27888-RA	sorting nexin 11
+Mcavernosa27889-RA	NOP14 nucleolar protein homolog (yeast)
+Mcavernosa27903-RA	kiaa1598
+Mcavernosa27902-RA	Nanos homolog
+Mcavernosa27911-RA	Involved in proper cytoplasmic distribution of mitochondria (By similarity)
+Mcavernosa27906-RA	Transient receptor potential cation channel subfamily V member
+Mcavernosa27908-RA	protein tyrosine phosphatase receptor type
+Mcavernosa27913-RA	checkpoint with forkhead and ring finger domains, E3 ubiquitin protein ligase
+Mcavernosa27907-RA	Sortilin-related VPS10 domain containing receptor
+Mcavernosa27909-RA	Cysteine and glycine-rich protein
+Mcavernosa27914-RA	checkpoint with forkhead and ring finger domains, E3 ubiquitin protein ligase
+Mcavernosa27912-RA	Involved in proper cytoplasmic distribution of mitochondria (By similarity)
+Mcavernosa27915-RA	TAF2 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 150kDa
+Mcavernosa27916-RA	TAF2 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 150kDa
+Mcavernosa27923-RA	Adaptin N terminal region
+Mcavernosa27918-RA	Papain family cysteine protease
+Mcavernosa27917-RA	ADP-ribosylation factor guanine nucleotide-exchange factor
+Mcavernosa27929-RA	Taurine catabolism dioxygenase TauD, TfdA family
+Mcavernosa27927-RA	Taurine catabolism dioxygenase TauD, TfdA family
+Mcavernosa27920-RA	Papain family cysteine protease
+Mcavernosa27926-RA	Follistatin-like
+Mcavernosa27925-RA	follistatin-like 4
+Mcavernosa27938-RA	oligosaccharyltransferase 4 homolog (S. cerevisiae)
+Mcavernosa27939-RA	CSE1 chromosome segregation 1-like (yeast)
+Mcavernosa27935-RA	FtsJ homolog 3 (E. coli)
+Mcavernosa27936-RA	Component of the eukaryotic translation initiation factor 3 (eIF-3) complex, which is required for several steps in the initiation of protein synthesis. The eIF-3 complex associates with the 40S ribosome and facilitates the recruitment of eIF-1, eIF-1A, eIF-2 GTP methionyl-tRNAi and eIF-5 to form the 43S preinitiation complex (43S PIC). The eIF-3 complex stimulates mRNA recruitment to the 43S PIC and scanning of the mRNA for AUG recognition. The eIF-3 complex is also required for disassembly and recycling of post-termination ribosomal complexes and subsequently prevents premature joining of the 40S and 60S ribosomal subunits prior to initiation
+Mcavernosa27933-RA	FtsJ homolog 3 (E. coli)
+Mcavernosa27934-RA	jun proto-oncogene
+Mcavernosa27947-RA	Laminin G domain
+Mcavernosa27941-RA	tektin 2 (testicular)
+Mcavernosa27944-RA	FAT tumor suppressor homolog
+Mcavernosa27940-RA	coiled-coil domain containing 25
+Mcavernosa27949-RA	Nuclear receptor binding protein
+Mcavernosa27954-RA	viral oncogene homolog
+Mcavernosa27963-RA	Poly(U)-specific
+Mcavernosa27966-RA	general transcription factor IIE polypeptide 1 alpha 56kDa
+Mcavernosa27956-RA	Cytochrome c oxidase subunit
 Mcavernosa27962-RA	defective in sister chromatid cohesion 1 homolog (S. cerevisiae)
 Mcavernosa27957-RA	activating enhancer binding protein 2
 Mcavernosa27960-RA	PP2Cc
@@ -11122,6 +11177,40 @@ Mcavernosa28583-RA	Tryptophanyl-tRNA synthetase
 Mcavernosa28597-RA	proteasome (prosome, macropain) activator subunit 4
 Mcavernosa28584-RA	leucine rich repeat containing 73
 Mcavernosa28601-RA	polycystic kidney disease 1
+Mcavernosa28602-RA	Polycystic kidney disease
+Mcavernosa28603-RA	polycystic kidney disease 1
+Mcavernosa28605-RA	Polycystic kidney disease
+Mcavernosa28607-RA	vesicle-associated membrane protein 7
+Mcavernosa28609-RA	kiaa1524
+Mcavernosa28604-RA	Latrophilin/CL-1-like GPS domain
+Mcavernosa28610-RA	cadherin, EGF LAG seven-pass G-type receptor
+Mcavernosa28617-RA	to nematocyst outer wall antigen Hydra magnipapillata
+Mcavernosa28619-RA	Notch ligand involved in the mediation of Notch signaling (By similarity)
+Mcavernosa28615-RA	lipoxygenase homology domains 1
+Mcavernosa28616-RA	slit homolog
+Mcavernosa28613-RA	contactin associated protein-like
+Mcavernosa28614-RA	contactin associated protein-like
+Mcavernosa28637-RA	Growth arrest-specific 2
+Mcavernosa28636-RA	Inherit from veNOG: Phosphoinositide-3-kinase adaptor protein 1
+Mcavernosa28635-RA	Zinc finger CCCH-type containing 10
+Mcavernosa28634-RA	AE binding protein 2
+Mcavernosa28643-RA	glutamate carboxypeptidase
+Mcavernosa28639-RA	serine threonine kinase receptor associated protein
+Mcavernosa28642-RA	serine threonine kinase receptor associated protein
+Mcavernosa28641-RA	Coiled-coil domain containing 94
+Mcavernosa28645-RA	Lipoma HMGIC fusion partner-like 2
+Mcavernosa28657-RA	RAB10, member RAS oncogene family
+Mcavernosa28658-RA	Phosphopantothenoylcysteine decarboxylase
+Mcavernosa28659-RA	xeroderma pigmentosum, complementation group A
+Mcavernosa28654-RA	cache domain containing 1
+Mcavernosa28649-RA	endothelin converting enzyme
+Mcavernosa28660-RA	chromosome 1 open reading frame 43
+Mcavernosa28662-RA	tripartite motif containing 2
+Mcavernosa28663-RA	spermatogenesis associated 5-like 1
+Mcavernosa28665-RA	general transcription factor IIIC, polypeptide 1, alpha 220kDa
+Mcavernosa28667-RA	Inherit from KOG: UPF2 regulator of nonsense transcripts homolog (yeast)
+Mcavernosa28664-RA	
+Mcavernosa28672-RA	Retrotransposon protein
 Mcavernosa28679-RA	mitogen-activated protein kinase kinase kinase
 Mcavernosa28677-RA	tRNA methyltransferase 6 homolog (S. cerevisiae)
 Mcavernosa28682-RA	receptor
@@ -11399,6 +11488,50 @@ Mcavernosa08669-RA	Chromosome 6 open reading frame 120
 Mcavernosa08675-RA	Chromosome 6 open reading frame 120
 Mcavernosa08666-RA	Notch ligand involved in the mediation of Notch signaling (By similarity)
 Mcavernosa08672-RA	MACRO domain containing 1
+Mcavernosa08668-RA	Notch ligand involved in the mediation of Notch signaling (By similarity)
+Mcavernosa08671-RA	Inherit from opiNOG: MIS18 binding protein 1
+Mcavernosa08673-RA	vacuolar protein sorting 54 homolog (S. cerevisiae)
+Mcavernosa08679-RA	rho GTPase activating protein
+Mcavernosa08684-RA	K04658 noggin
+Mcavernosa08685-RA	ubiE/COQ5 methyltransferase family
+Mcavernosa08683-RA	solute carrier family 25 (mitochondrial carrier)
+Mcavernosa08686-RA	polycystic kidney disease 1
+Mcavernosa08691-RA	polycystic kidney disease 1
+Mcavernosa08692-RA	polycystic kidney disease 1
+Mcavernosa08693-RA	polycystic kidney disease 1
+Mcavernosa08688-RA	K04658 noggin
+Mcavernosa08689-RA	UTP6, small subunit (SSU) processome component, homolog (yeast)
+Mcavernosa08690-RA	UTP6, small subunit (SSU) processome component, homolog (yeast)
+Mcavernosa08704-RA	protein disulfide isomerase family A, member 2
+Mcavernosa08706-RA	tetratricopeptide repeat domain 34
+Mcavernosa08705-RA	Rho GDP dissociation inhibitor (GDI)
+Mcavernosa08702-RA	Guanine nucleotide-binding proteins (G proteins) are involved as a modulator or transducer in various transmembrane signaling systems. The beta and gamma chains are required for the GTPase activity, for replacement of GDP by GTP, and for G protein- effector interaction (By similarity)
+Mcavernosa08697-RA	Dihydrouridine synthase 1-like (S. cerevisiae)
+Mcavernosa08698-RA	Aly REF export factor
+Mcavernosa08700-RA	Plays a role in anterograde intraflagellar transport (IFT), the process by which cilia precursors are transported from the base of the cilium to the site of their incorporation at the tip
+Mcavernosa08703-RA	protein disulfide isomerase family A, member 2
+Mcavernosa08711-RA	Inherit from opiNOG: Polyamine oxidase
+Mcavernosa08707-RA	tetratricopeptide repeat domain 34
+Mcavernosa08708-RA	transmembrane protein 184B
+Mcavernosa08721-RA	Endoplasmic reticulum to nucleus signaling
+Mcavernosa08715-RA	RNA binding protein S1, serine-rich domain
+Mcavernosa08724-RA	Trinucleotide repeat containing 6B
+Mcavernosa08713-RA	N-methylpurine-DNA glycosylase
+Mcavernosa08714-RA	Possible lysine decarboxylase
+Mcavernosa08719-RA	Testis expressed 2
+Mcavernosa08731-RA	14_3_3
+Mcavernosa08730-RA	14_3_3
+Mcavernosa08728-RA	polymerase (DNA directed), iota
+Mcavernosa08739-RA	DEAD (Asp-Glu-Ala-Asp) box polypeptide 46
+Mcavernosa08744-RA	Heat shock 10kDa protein 1 (Chaperonin 10)
+Mcavernosa08741-RA	Glycerol-3-phosphate dehydrogenase
+Mcavernosa08743-RA	Heat shock 10kDa protein 1 (Chaperonin 10)
+Mcavernosa08740-RA	Zinc finger protein
+Mcavernosa08732-RA	60S ribosomal protein L27
+Mcavernosa08736-RA	
+Mcavernosa08749-RA	transporter activity
+Mcavernosa08746-RA	be involved in pre-mRNA splicing (By similarity)
+Mcavernosa08751-RA	transporter activity
 Mcavernosa08755-RA	transporter activity
 Mcavernosa08742-RA	heat shock 60kDa protein 1 (chaperonin)
 Mcavernosa08748-RA	Ubiquitin-conjugating enzyme E2Z
@@ -11994,6 +12127,53 @@ Mcavernosa14928-RA	Transmembrane protein 205
 Mcavernosa14936-RA	stomatin (EPB72)-like 1
 Mcavernosa14933-RA	Astacin (Peptidase family M12A)
 Mcavernosa14924-RA	Tudor domain
+Mcavernosa14939-RA	stomatin (EPB72)-like 1
+Mcavernosa14935-RA	50S ribosomal protein
+Mcavernosa14934-RA	FK506 binding protein 14, 22 kDa
+Mcavernosa14923-RA	40S ribosomal protein S8
+Mcavernosa14929-RA	
+Mcavernosa14961-RA	tubulin, gamma complex associated protein 5
+Mcavernosa14954-RA	neurogenic locus notch homolog protein
+Mcavernosa14957-RA	Tubulin, gamma complex associated protein 5
+Mcavernosa14953-RA	neurogenic locus Notch
+Mcavernosa14958-RA	Tubulin, gamma complex associated protein 5
+Mcavernosa14969-RA	clavesin
+Mcavernosa14973-RA	aspartate beta-hydroxylase
+Mcavernosa14966-RA	Dynactin 4 (P62)
+Mcavernosa14975-RA	BACK
+Mcavernosa14967-RA	Rho-related BTB domain containing
+Mcavernosa14971-RA	DEAH (Asp-Glu-Ala-His) box polypeptide 35
+Mcavernosa14972-RA	DEAH (Asp-Glu-Ala-His) box polypeptide 35
+Mcavernosa14978-RA	Phospholipase A2, group IVA (Cytosolic, calcium-dependent)
+Mcavernosa14979-RA	Phospholipase A2, group IVA (Cytosolic, calcium-dependent)
+Mcavernosa14989-RA	Latrophilin/CL-1-like GPS domain
+Mcavernosa14983-RA	Thyroglobulin type-1 repeat
+Mcavernosa14984-RA	Receptor
+Mcavernosa14996-RA	methyltransferase like 5
+Mcavernosa14992-RA	Protein-O-mannosyltransferase
+Mcavernosa14990-RA	Abhydrolase domain containing
+Mcavernosa14991-RA	Protein-O-mannosyltransferase
+Mcavernosa14994-RA	GINS complex subunit 1 (Psf1 homolog)
+Mcavernosa15006-RA	cytochrome c oxidase assembly factor 4 homolog (S. cerevisiae)
+Mcavernosa15004-RA	mitochondrial ribosomal protein L40
+Mcavernosa15007-RA	
+Mcavernosa15005-RA	
+Mcavernosa15014-RA	tumor suppressor candidate 2
+Mcavernosa15011-RA	K04486 histidinol-phosphatase (PHP family) EC 3.1.3.15
+Mcavernosa15008-RA	sidekick cell adhesion molecule 2
+Mcavernosa15010-RA	Tryp_SPc
+Mcavernosa15009-RA	protein tyrosine phosphatase receptor type
+Mcavernosa15015-RA	Ras association (RalGDS AF-6) domain family member 1
+Mcavernosa15016-RA	Sulfatase
+Mcavernosa15075-RA	Ammonium transporter
+Mcavernosa15089-RA	Serpentine type 7TM GPCR chemoreceptor Srsx
+Mcavernosa15093-RA	WD repeat domain 55
+Mcavernosa15090-RA	Serpentine type 7TM GPCR chemoreceptor Srsx
+Mcavernosa15111-RA	UDP-Gal betaGlcNAc beta 1,3-galactosyltransferase, polypeptide 5
+Mcavernosa15101-RA	small optic lobes homolog (Drosophila)
+Mcavernosa15098-RA	sialidase 1 (lysosomal sialidase)
+Mcavernosa15102-RA	
+Mcavernosa15103-RA	HELP motif
 Mcavernosa15097-RA	Post-GPI attachment to proteins
 Mcavernosa15100-RA	sialidase 1 (lysosomal sialidase)
 Mcavernosa15099-RA	sialidase 1 (lysosomal sialidase)
@@ -12282,6 +12462,20 @@ Mcavernosa11607-RA	ENTH domain containing 2
 Mcavernosa11620-RA	solute carrier family 15, member
 Mcavernosa11618-RA	solute carrier family 15, member
 Mcavernosa11623-RA	family with sequence similarity 63, member
+Mcavernosa11625-RA	Thrombospondin C-terminal region
+Mcavernosa11621-RA	solute carrier family 15, member
+Mcavernosa11631-RA	Removes the N-terminal methionine from nascent proteins (By similarity)
+Mcavernosa11629-RA	Alcohol dehydrogenase, iron containing, 1
+Mcavernosa11633-RA	GIPC PDZ domain containing family, member
+Mcavernosa11632-RA	Kelch-like 12 (Drosophila)
+Mcavernosa11636-RA	dynein, cytoplasmic 2, heavy chain 1
+Mcavernosa11639-RA	PDZ domain containing 8
+Mcavernosa11635-RA	Acid phosphatase 5, tartrate resistant
+Mcavernosa11641-RA	Cyclin A2
+Mcavernosa11653-RA	transient receptor potential channel
+Mcavernosa11655-RA	transient receptor potential channel
+Mcavernosa11651-RA	The H2 subclass of histamine receptors mediates gastric acid secretion. The activity of this receptor is mediated by G proteins which activate adenylyl cyclase
+Mcavernosa11659-RA	Ciliary rootlet coiled-coil, rootletin
 Cladocopium55949_c0_seq1	
 Cladocopium55976_c0_seq1	Tubulin tyrosine ligase-like family, member
 Cladocopium55978_c0_seq1	peptidase S8 and S53, subtilisin, kexin, sedolisin
@@ -12458,6 +12652,34 @@ Cladocopium58012_c0_seq1	Dehydrogenase
 Cladocopium58028_c0_seq1	Iron-binding zinc finger CDGSH type
 Cladocopium58028_c0_seq2	Iron-binding zinc finger CDGSH type
 Cladocopium58032_c0_seq1	oxidoreductase
+Cladocopium58035_c0_seq1	S_TKc
+Cladocopium58038_c0_seq1	potassium voltage-gated channel, Shaw-related subfamily, member 2
+Cladocopium58041_c0_seq1	o-acyltransferase
+Cladocopium58046_c0_seq1	RNA recognition motif 2
+Cladocopium58057_c0_seq1	phosphatase 2C
+Cladocopium58063_c0_seq1	Centrosomal protein 164kDa
+Cladocopium58064_c0_seq1	Ubiquitin-protein ligase
+Cladocopium58065_c0_seq1	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+Cladocopium58097_c0_seq1	Chlorophyll A-B binding protein
+Cladocopium58107_c0_seq1	ABC transporter
+Cladocopium58110_c0_seq1	Acid phosphatase 5, tartrate resistant
+Cladocopium58121_c0_seq1	OTU domain-containing protein
+Cladocopium58131_c0_seq1	Inherit from fuNOG: Cytochrome b5-like Heme/Steroid binding domain
+Cladocopium58140_c0_seq1	Functions as an electron carrier between membrane-bound cytochrome b6-f and photosystem I in oxygenic photosynthesis (By similarity)
+Cladocopium58146_c0_seq1	PPIases accelerate the folding of proteins
+Cladocopium58203_c0_seq1	enzyme e2
+Cladocopium58212_c0_seq1	zinc finger
+Cladocopium58215_c0_seq1	adaptor-related protein complex 2, sigma 1 subunit
+Cladocopium58245_c0_seq1	DKCLD (NUC011) domain
+Cladocopium58249_c0_seq1	Cytochrome b2
+Cladocopium58267_c0_seq1	Aspartate aminotransferase
+Cladocopium58268_c0_seq1	Procollagen-lysine,2-oxoglutarate 5-dioxygenase
+Cladocopium58272_c0_seq1	The proteasome is a multicatalytic proteinase complex which is characterized by its ability to cleave peptides with Arg, Phe, Tyr, Leu, and Glu adjacent to the leaving group at neutral or slightly basic pH. The proteasome has an ATP-dependent proteolytic activity (By similarity)
+Cladocopium58281_c0_seq1	hydrolase, alpha beta fold family protein
+Cladocopium58300_c0_seq1	Ammonium Transporter Family
+Cladocopium58310_c0_seq1	small optic lobes homolog (Drosophila)
+Cladocopium58315_c0_seq1	ankyrin 3, node of Ranvier (ankyrin G)
+Cladocopium58327_c0_seq1	TBC domain containing protein
 Mcavernosa11662-RA	Mitofusin 2
 Mcavernosa11658-RA	scavenger receptor class B member
 Mcavernosa11678-RA	(Membrane-Associated Ring finger (C3HC4))
@@ -12748,6 +12970,16 @@ Mcavernosa31690-RA	Receptor
 Mcavernosa31693-RA	Signal sequence receptor delta
 Mcavernosa31695-RA	HECT domain containing E3 ubiquitin protein ligase 4
 Mcavernosa31698-RA	HECTc
+Mcavernosa31696-RA	HECTc
+Mcavernosa31692-RA	UTP23, small subunit (SSU) processome component, homolog (yeast)
+Mcavernosa31694-RA	Peptidase M20 domain containing 1
+Mcavernosa31705-RA	Transmembrane protein 248
+Mcavernosa31703-RA	Max binding protein
+Mcavernosa31702-RA	MORC family CW-type zinc finger
+Mcavernosa31707-RA	Vacuolar protein sorting 33 homolog
+Mcavernosa31715-RA	Eukaryotic cobalamin-binding protein
+Mcavernosa31717-RA	Trichoplein, keratin filament binding
+Mcavernosa31713-RA	Vacuolar protein sorting 33 homolog
 Mcavernosa31710-RA	Eukaryotic cobalamin-binding protein
 Mcavernosa31722-RA	Cell division control protein
 Mcavernosa31719-RA	LIM domain kinase
@@ -13020,6 +13252,48 @@ Mcavernosa32315-RA	piggyBac transposable element derived 4
 Mcavernosa32310-RA	Leukocyte cell-derived chemotaxin 2
 Mcavernosa32323-RA	Protein of unknown function (DUF1180)
 Mcavernosa32321-RA	hemicentin 1
+Mcavernosa32326-RA	N-acetyltransferase
+Mcavernosa32319-RA	cysteine conjugate-beta lyase
+Mcavernosa32329-RA	N-acetyltransferase
+Mcavernosa32320-RA	Tubulin tyrosine ligase-like family, member 11
+Mcavernosa32325-RA	N-acetyltransferase
+Mcavernosa32327-RA	N-acetyltransferase
+Mcavernosa32324-RA	thrombospondin-type laminin G domain and EAR repeats
+Mcavernosa32334-RA	DEAD H (Asp-Glu-Ala-Asp His) box helicase 11
+Mcavernosa32331-RA	DEAD H (Asp-Glu-Ala-Asp His) box helicase 11
+Mcavernosa32333-RA	DEAD H (Asp-Glu-Ala-Asp His) box helicase 11
+Mcavernosa32335-RA	chromosome 11 open reading frame 82
+Mcavernosa32339-RA	storkhead box 1
+Mcavernosa32338-RA	member RAS oncogene family
+Mcavernosa32337-RA	RAB30, member RAS oncogene family
+Mcavernosa32330-RA	DNA-damage regulated autophagy modulator 2
+Mcavernosa32332-RA	DEAD H (Asp-Glu-Ala-Asp His) box helicase 11
+Mcavernosa32344-RA	DNA-directed RNA polymerase
+Mcavernosa32342-RA	SEC14
+Mcavernosa32347-RA	Histone H2A
+Mcavernosa32350-RA	eph receptor
+Mcavernosa32346-RA	Calcium-activated BK potassium channel alpha subunit
+Mcavernosa32352-RA	eph receptor
+Mcavernosa32349-RA	Ephrin receptor ligand binding domain
+Mcavernosa32353-RA	EPH receptor A4
+Mcavernosa32359-RA	AAA
+Mcavernosa32358-RA	Ring finger protein
+Mcavernosa32357-RA	Ring finger protein
+Mcavernosa32356-RA	eph receptor A8
+Mcavernosa32360-RA	Ring finger protein
+Mcavernosa32364-RA	Ring finger protein
+Mcavernosa32373-RA	G- protein-coupled receptor
+Mcavernosa32376-RA	Xyloside xylosyltransferase 1
+Mcavernosa32375-RA	Xyloside xylosyltransferase 1
+Mcavernosa32374-RA	Xyloside xylosyltransferase 1
+Mcavernosa32388-RA	Tnf receptor-associated factor 2
+Mcavernosa32377-RA	Sulfotransferase family
+Mcavernosa32387-RA	O-acetyltransferase
+Mcavernosa32381-RA	Sulfotransferase family
+Mcavernosa32390-RA	Tnf receptor-associated factor 2
+Mcavernosa32378-RA	fucosidase, alpha-L
+Mcavernosa32379-RA	fucosidase, alpha-L
+Mcavernosa32383-RA	Cytochrome P450
 Mcavernosa32380-RA	Xyloside xylosyltransferase 1
 Mcavernosa32386-RA	zinc finger, DHHC-type containing 12
 Mcavernosa32392-RA	Inherit from euNOG: Cofilin/tropomyosin-type actin-binding protein
@@ -13270,6 +13544,66 @@ Mcavernosa18585-RA	lysine (K)-specific demethylase 1B
 Mcavernosa18590-RA	TNF receptor-associated factor
 Mcavernosa18587-RA	ornithine decarboxylase
 Mcavernosa18593-RA	NAD-dependent lysine demalonylase and desuccinylase that specifically removes malonyl and succinyl groups on target proteins. Activates CPS1 and contributes to the regulation of blood ammonia levels during prolonged fasting acts by mediating desuccinylation of CPS1, thereby increasing CPS1 activity in response to elevated NAD levels during fasting. Has weak NAD- dependent protein deacetylase activity
+Mcavernosa18597-RA	6-phosphogluconolactonase
+Mcavernosa18595-RA	family with sequence similarity 92, member A1
+Mcavernosa18598-RA	Charged multivesicular body protein
+Mcavernosa18596-RA	RNA binding motif protein 12B
+Mcavernosa18594-RA	epithelial splicing regulatory protein
+Mcavernosa18592-RA	SPRY
+Mcavernosa18606-RA	TNF receptor-associated factor
+Mcavernosa18613-RA	cyclin-dependent kinase 7
+Mcavernosa18610-RA	frataxin
+Mcavernosa18621-RA	Metaxin 3
+Mcavernosa18619-RA	Lamin A C
+Mcavernosa18616-RA	Lamin A C
+Mcavernosa18611-RA	dyslexia susceptibility 1 candidate 1
+Mcavernosa18628-RA	Paired box
+Mcavernosa18608-RA	ubiquitin associated protein
+Mcavernosa18623-RA	Receptor
+Mcavernosa18622-RA	Receptor
+Mcavernosa18625-RA	Paired box
+Mcavernosa18626-RA	PAX
+Mcavernosa18627-RA	Paired box
+Mcavernosa18632-RA	HECT and RLD domain containing E3 ubiquitin protein ligase family member 1
+Mcavernosa18635-RA	HECT and RLD domain containing E3 ubiquitin protein ligase
+Mcavernosa18630-RA	HECT and RLD domain containing E3 ubiquitin protein ligase
+Mcavernosa18641-RA	protein kinase c
+Mcavernosa18642-RA	Transmembrane channel-like
+Mcavernosa18640-RA	protein kinase c
+Mcavernosa18639-RA	protein kinase C
+Mcavernosa18643-RA	Transmembrane channel-like
+Mcavernosa18652-RA	ectonucleotide pyrophosphatase phosphodiesterase
+Mcavernosa18646-RA	EBNA1 binding protein 2
+Mcavernosa18648-RA	Protein of unknown function (DUF1183)
+Mcavernosa18653-RA	ectonucleotide pyrophosphatase phosphodiesterase
+Mcavernosa18654-RA	centromere protein P
+Mcavernosa18650-RA	ectonucleotide pyrophosphatase phosphodiesterase
+Mcavernosa18651-RA	Type I phosphodiesterase / nucleotide pyrophosphatase
+Mcavernosa18658-RA	Hydroxysteroid dehydrogenase like 2
+Mcavernosa18655-RA	Hydroxysteroid dehydrogenase like 2
+Mcavernosa18668-RA	sidekick cell adhesion molecule 2
+Mcavernosa18666-RA	collagen, type VI, alpha
+Mcavernosa18663-RA	phosphatidic acid phosphatase type
+Mcavernosa18675-RA	Sodium channel voltage-gated type
+Mcavernosa18672-RA	Sodium channel voltage-gated type
+Mcavernosa18670-RA	Sodium channel voltage-gated type
+Mcavernosa18673-RA	Sodium channel voltage-gated type
+Mcavernosa18677-RA	sidekick cell adhesion molecule 2
+Mcavernosa18678-RA	sidekick cell adhesion molecule 2
+Mcavernosa18682-RA	sidekick cell adhesion molecule 2
+Mcavernosa18681-RA	transmembrane 7 superfamily member 2
+Mcavernosa18685-RA	
+Mcavernosa18689-RA	Enabled homolog (Drosophila)
+Mcavernosa18695-RA	Protein of unknown function (DUF815)
+Mcavernosa18693-RA	RNA binding motif protein
+Mcavernosa18686-RA	
+Mcavernosa18687-RA	
+Mcavernosa18699-RA	mitogen-activated protein kinase kinase kinase
+Mcavernosa18701-RA	Regulator of G-protein signaling
+Mcavernosa18704-RA	neuroblastoma, suppression of tumorigenicity 1
+Mcavernosa18703-RA	pogo transposable element with KRAB domain
+Mcavernosa18691-RA	Enabled homolog (Drosophila)
+Mcavernosa18697-RA	Astacin (Peptidase family M12A)
 Mcavernosa18714-RA	actin-related protein 3
 Mcavernosa18712-RA	double zinc ribbon and ankyrin repeat domains 1
 Mcavernosa18711-RA	protein tyrosine phosphatase domain containing 1
@@ -13509,6 +13843,69 @@ Mcavernosa06266-RA	Solute carrier family 30 (Zinc transporter), member 6
 Mcavernosa06278-RA	cytochrome c oxidase assembly factor 6 homolog (S. cerevisiae)
 Mcavernosa06285-RA	protein 1 (negative cofactor 2 alpha)
 Mcavernosa06282-RA	vasohibin
+Mcavernosa06281-RA	thyroid hormone receptor interactor 11
+Mcavernosa06273-RA	Coiled-coil domain containing 61
+Mcavernosa06292-RA	actinin, alpha
+Mcavernosa06294-RA	Nucleoporin 133kDa
+Mcavernosa06286-RA	dimethylarginine dimethylaminohydrolase 1
+Mcavernosa06293-RA	fermitin family member
+Mcavernosa06290-RA	Actinin alpha 1
+Mcavernosa06288-RA	polymerase (DNA directed), alpha 2, accessory subunit
+Mcavernosa06283-RA	glutamine rich 2
+Mcavernosa06300-RA	synaptotagmin
+Mcavernosa06296-RA	Nucleoporin 133kDa
+Mcavernosa06299-RA	Nucleoporin 133kDa
+Mcavernosa06309-RA	Reverse transcriptase (RNA-dependent DNA polymerase)
+Mcavernosa06311-RA	thyroid adenoma associated
+Mcavernosa06319-RA	Inherit from euNOG: Retrotransposon protein
+Mcavernosa06317-RA	thyroid adenoma associated
+Mcavernosa06318-RA	thyroid adenoma associated
+Mcavernosa06335-RA	Inherit from KOG: matrix metallopeptidase
+Mcavernosa06341-RA	protein arginine methyltransferase 2
+Mcavernosa06350-RA	Calsequestrin is a high-capacity, moderate affinity, calcium-binding protein and thus acts as an internal calcium store in muscle. The release of calcium bound to calsequestrin through a calcium release channel triggers muscle contraction (By similarity)
+Mcavernosa06349-RA	rho GTPase activating protein
+Mcavernosa06351-RA	Hydroxymethylbilane synthase
+Mcavernosa06357-RA	DOMON domain
+Mcavernosa06354-RA	Transmembrane protein 147
+Mcavernosa06356-RA	Transmembrane protein 147
+Mcavernosa06358-RA	
+Mcavernosa06355-RA	Hydroxymethylbilane synthase
+Mcavernosa06360-RA	Dynamin family
+Mcavernosa06353-RA	Cell division cycle-associated protein 8
+Mcavernosa06361-RA	Dynamin family
+Mcavernosa06362-RA	Dynamin family
+Mcavernosa06369-RA	BCL6 corepressor-like 1
+Mcavernosa06364-RA	protein kinase kinase kinase
+Mcavernosa06366-RA	protein kinase kinase kinase
+Mcavernosa06368-RA	ATPase, H transporting, lysosomal accessory protein 2
+Mcavernosa06372-RA	Immunoglobulin domain
+Mcavernosa06375-RA	Immunoglobulin I-set domain
+Mcavernosa06388-RA	Calpain 5
+Mcavernosa06386-RA	Calpain 5
+Mcavernosa06378-RA	Growth factor receptor
+Mcavernosa06390-RA	
+Mcavernosa06391-RA	Leucine rich repeat containing 42
+Mcavernosa06395-RA	carbohydrate (N-acetylglucosamine 6-O) sulfotransferase
+Mcavernosa06389-RA	Cytochrome p450
+Mcavernosa06393-RA	GLIS family zinc finger
+Mcavernosa06401-RA	Superkiller viralicidic activity 2-like
+Mcavernosa06405-RA	regulatory factor X, 2 (influences HLA class II expression)
+Mcavernosa06397-RA	Superkiller viralicidic activity 2-like
+Mcavernosa06398-RA	Superkiller viralicidic activity 2-like
+Mcavernosa06414-RA	DEAD (Asp-Glu-Ala-Asp) box polypeptide 41
+Mcavernosa06419-RA	ER membrane protein complex subunit 1
+Mcavernosa06415-RA	creatine kinase, mitochondrial
+Mcavernosa06412-RA	leucine rich repeat containing
+Mcavernosa06418-RA	Transmembrane protein 48
+Mcavernosa06411-RA	leucine rich repeat containing
+Mcavernosa06417-RA	Transmembrane protein 48
+Mcavernosa06416-RA	creatine kinase, mitochondrial
+Mcavernosa06423-RA	Hook homolog
+Mcavernosa06435-RA	WD repeat domain 83 opposite strand
+Mcavernosa06433-RA	Ubiquitin protein ligase E3C
+Mcavernosa06437-RA	von Willebrand factor type A domain
+Mcavernosa06430-RA	
+Mcavernosa06434-RA	Avidin family
 Mcavernosa06441-RA	Fibronectin type III domain
 Mcavernosa06438-RA	sidekick cell adhesion molecule 2
 Mcavernosa06445-RA	Solute carrier family 50 (Sugar transporter), member 1
@@ -13788,14 +14185,65 @@ Mcavernosa06950-RA	chloride channel
 Mcavernosa06945-RA	terminal uridylyl transferase 1, U6 snRNA-specific
 Mcavernosa06952-RA	Inherit from NOG: Retrotransposon protein
 Mcavernosa06959-RA	ARP8 actin-related protein 8 homolog (yeast)
+Mcavernosa06958-RA	autophagy related 12
+Mcavernosa06956-RA	Serine arginine-rich splicing factor 2
+Mcavernosa06965-RA	HIR histone cell cycle regulation defective homolog A (S. cerevisiae)
+Mcavernosa06968-RA	pyroglutamylated RFamide peptide receptor
+Mcavernosa06975-RA	serine arginine-rich splicing factor
+Mcavernosa06971-RA	Inherit from opiNOG: CDC42 binding protein kinase
+Mcavernosa06976-RA	cyclic nucleotide gated channel alpha
+Mcavernosa06988-RA	D-aspartate oxidase
+Mcavernosa06989-RA	D-aspartate oxidase
+Mcavernosa06982-RA	phospholipase B domain containing 2
+Mcavernosa06986-RA	Coiled-coil domain containing 42
+Mcavernosa06979-RA	phospholipase B domain containing 2
+Mcavernosa06981-RA	Taurine catabolism dioxygenase TauD, TfdA family
+Mcavernosa06978-RA	Family with sequence similarity 109, member
+Mcavernosa06983-RA	phosphoserine phosphatase
+Mcavernosa06977-RA	ankyrin repeat and FYVE domain containing 1
+Mcavernosa06987-RA	kinesin family member 22
+Mcavernosa06990-RA	taurine catabolism dioxygenase taud tfda
+Mcavernosa06984-RA	TBCC domain containing 1
+Mcavernosa06997-RA	solute carrier family 24 (sodium lithium calcium exchanger), member 6
+Mcavernosa06999-RA	Ring finger protein
+Mcavernosa06998-RA	Ring finger protein
+Mcavernosa06992-RA	D-aspartate oxidase
+Mcavernosa06994-RA	cyclic nucleotide binding domain containing 2
+Mcavernosa06991-RA	Taurine catabolism dioxygenase TauD, TfdA family
+Mcavernosa07004-RA	serine threonine-protein kinase
+Mcavernosa07000-RA	solute carrier family 24 (sodium lithium calcium exchanger), member 6
+Mcavernosa07007-RA	L(3)mbt-like
+Mcavernosa07005-RA	Inherit from euNOG: gTPase, IMAP family member
+Mcavernosa07012-RA	chromosome 16 open reading frame 93
+Mcavernosa07002-RA	Inherit from biNOG: arginine serine-rich coiled-coil 2
+Mcavernosa07009-RA	ubiquitin protein ligase
+Mcavernosa07020-RA	Chromosome 12 open reading frame 65
+Mcavernosa07015-RA	piwi-like
+Mcavernosa07021-RA	cyclin-dependent kinase 2 associated protein 1
+Mcavernosa07030-RA	SH3 and PX domains
+Mcavernosa07022-RA	chromosome 16 open reading frame 93
+Mcavernosa07029-RA	piwi-like
+Mcavernosa07044-RA	Component of the eukaryotic translation initiation factor 3 (eIF-3) complex, which is involved in protein synthesis and, together with other initiation factors, stimulates binding of mRNA and methionyl-tRNAi to the 40S ribosome (By similarity)
+Mcavernosa07043-RA	acid-sensing (proton-gated) ion channel family member 5
+Mcavernosa07055-RA	RING
+Mcavernosa07048-RA	flotillin 2
+Mcavernosa07049-RA	Coiled-coil domain-containing protein 55 (DUF2040)
+Mcavernosa07054-RA	serine racemase
+Mcavernosa07056-RA	G protein-coupled receptor kinase interacting ArfGAP
+Mcavernosa07051-RA	serine racemase
+Mcavernosa07058-RA	G protein-coupled receptor kinase interacting ArfGAP
+Mcavernosa07066-RA	serine protease
+Mcavernosa07064-RA	metalloendopeptidase activity
+Mcavernosa07059-RA	ankyrin repeat domain
+Mcavernosa07068-RA	transmembrane protease serine
 Mcavernosa07070-RA	heat shock transcription factor
 Mcavernosa07080-RA	Component of the ubiquinol-cytochrome c reductase complex (complex III or cytochrome b-c1 complex), which is a respiratory chain that generates an electrochemical potential coupled to ATP synthesis (By similarity)
 Mcavernosa07082-RA	Eukaryotic translation initiation factor 2-alpha kinase
 Mcavernosa07072-RA	testis, prostate and placenta expressed
 Mcavernosa07075-RA	Ribosome biogenesis protein
 Mcavernosa07073-RA	Inherit from opiNOG: Protein disulfide isomerase family A, member 6
-Mcavernosa07079-RA	Inherit from NOG: determination of left/right Cladocopiummetry
-Mcavernosa07077-RA	Inherit from NOG: determination of left/right Cladocopiummetry
+Mcavernosa07079-RA	Inherit from NOG: determination of left/right symmetry
+Mcavernosa07077-RA	Inherit from NOG: determination of left/right symmetry
 Mcavernosa07084-RA	Inherit from KOG: ATPdependent RNA helicase
 Mcavernosa07087-RA	Calcineurin-like phosphoesterase
 Mcavernosa07104-RA	anaphase promoting complex subunit 13
@@ -14336,6 +14784,22 @@ Mcavernosa22033-RA	GTP-binding protein 10
 Mcavernosa22038-RA	ring finger and CHY zinc finger
 Mcavernosa22036-RA	ring finger and CHY zinc finger
 Mcavernosa22041-RA	Calcium-binding EGF domain
+Mcavernosa22043-RA	mannose receptor, C type 1
+Mcavernosa22050-RA	Pentaxin family
+Mcavernosa22060-RA	Hemicentin 1
+Mcavernosa22057-RA	ATP-binding cassette, sub-family C (CFTR MRP), member
+Mcavernosa22055-RA	Myosin VIIA
+Mcavernosa22054-RA	ATP-binding cassette, sub-family C (CFTR MRP), member
+Mcavernosa22064-RA	collagen, type
+Mcavernosa22063-RA	Myosin VIIA
+Mcavernosa22061-RA	Myosin VIIA
+Mcavernosa22066-RA	von Willebrand factor type A domain
+Mcavernosa22069-RA	Growth factor receptor
+Mcavernosa22068-RA	retinoschisin 1
+Mcavernosa22071-RA	Growth factor receptor
+Mcavernosa22086-RA	Chimerin
+Mcavernosa22101-RA	CWC22 spliceosome-associated protein homolog (S. cerevisiae)
+Mcavernosa22106-RA	ectonucleotide pyrophosphatase phosphodiesterase
 Mcavernosa22100-RA	Disco-interacting protein
 Mcavernosa22095-RA	AMP-binding enzyme
 Mcavernosa22096-RA	Disco-interacting protein
@@ -14612,6 +15076,40 @@ Mcavernosa22685-RA	PR domain containing 6
 Mcavernosa22688-RA	cylindromatosis (turban tumor syndrome)
 Mcavernosa22692-RA	Golgi glycoprotein 1
 Mcavernosa22693-RA	Golgi glycoprotein 1
+Mcavernosa22697-RA	endonuclease exonuclease phosphatase family domain containing 1
+Mcavernosa22696-RA	Golgi glycoprotein 1
+Mcavernosa22702-RA	Guanine nucleotide-binding proteins (G proteins) are involved as modulators or transducers in various transmembrane signaling systems. The G(s) protein is involved in hormonal regulation of adenylate cyclase it activates the cyclase
+Mcavernosa22701-RA	Guanine nucleotide binding protein (G protein), alpha activating activity polypeptide, olfactory type
+Mcavernosa22710-RA	Eukaryotic translation initiation factor 5B
+Mcavernosa22707-RA	Ubiquitin protein ligase E3A
+Mcavernosa22726-RA	kiaa1958
+Mcavernosa22722-RA	DnaJ (Hsp40) homolog, subfamily A, member
+Mcavernosa22721-RA	Prostaglandin E synthase 2
+Mcavernosa22723-RA	High mobility group 20A
+Mcavernosa22727-RA	Galanin receptor
+Mcavernosa22732-RA	crystallin, zeta (quinone reductase)
+Mcavernosa22729-RA	crystallin, zeta (quinone reductase)
+Mcavernosa22736-RA	oncoprotein induced transcript 3
+Mcavernosa22742-RA	Receptor
+Mcavernosa22745-RA	Actin-like
+Mcavernosa22747-RA	Zinc finger CCCH-type containing 6
+Mcavernosa22752-RA	Adenosine deaminase, RNA-specific
+Mcavernosa22756-RA	tRNA aspartic acid methyltransferase 1
+Mcavernosa22749-RA	Kinesin family member
+Mcavernosa22762-RA	family with sequence similarity 189, member B
+Mcavernosa22764-RA	Acid phosphatase 6, lysophosphatidic
+Mcavernosa22769-RA	tropomodulin
+Mcavernosa22768-RA	Tight junction protein
+Mcavernosa22765-RA	May be involved as a regulatory protein in the transition of undifferentiated proliferating cells to their differentiated state. May also function as a cell adhesion molecule in a broad spectrum of embryonic and adult tissues
+Mcavernosa22766-RA	deleted in colorectal carcinoma
+Mcavernosa22770-RA	Chondroitin sulfate N-acetylgalactosaminyltransferase
+Mcavernosa22779-RA	Selenium binding protein 1
+Mcavernosa22772-RA	tetratricopeptide repeat domain 3
+Mcavernosa22777-RA	tyrosine-protein kinase
+Mcavernosa22776-RA	TFIIA is a component of the transcription machinery of RNA polymerase II and plays an important role in transcriptional activation (By similarity)
+Mcavernosa22774-RA	Inherit from COG: epimerase dehydratase
+Mcavernosa15379-RA	megakaryoblastic leukemia (translocation) 1
+Mcavernosa15382-RA	myosin, heavy chain
 Mcavernosa15383-RA	NHP2 non-histone chromosome protein 2-like 1 (S. cerevisiae)
 Mcavernosa15381-RA	Myosin heavy chain
 Mcavernosa15385-RA	intraflagellar transport 140 homolog (Chlamydomonas)
@@ -14882,6 +15380,58 @@ Mcavernosa15940-RA	Glucuronic acid epimerase
 Mcavernosa15942-RA	arginine-glutamic acid dipeptide (RE) repeats
 Mcavernosa15934-RA	coagulation factor
 Mcavernosa15932-RA	ADP-ribose CDP-alcohol diphosphatase, manganese-dependent
+Mcavernosa15955-RA	solute carrier family 7 (orphan transporter), member
+Mcavernosa15954-RA	transporter activity
+Mcavernosa15952-RA	transporter activity
+Mcavernosa15944-RA	SEC62 homolog (S. cerevisiae)
+Mcavernosa15958-RA	solute carrier family 7 (cationic amino acid transporter, y system), member 2
+Mcavernosa15964-RA	Stomatin
+Mcavernosa15962-RA	Regulatory subunit of the condensin complex, a complex required for conversion of interphase chromatin into mitotic-like condense chromosomes. The condensin complex probably introduces positive supercoils into relaxed DNA in the presence of type I topoisomerases and converts nicked DNA into positive knotted forms in the presence of type II topoisomerases (By similarity)
+Mcavernosa15963-RA	Stomatin
+Mcavernosa15969-RA	Zinc finger, C3HC4 type (RING finger)
+Mcavernosa15961-RA	solute carrier family 7, (cationic amino acid transporter, y system) member
+Mcavernosa15965-RA	2 iron, 2 sulfur cluster binding
+Mcavernosa15968-RA	2 iron, 2 sulfur cluster binding
+Mcavernosa15973-RA	phosphatidylinositol transfer protein
+Mcavernosa15975-RA	ATP-binding cassette, sub-family F (GCN20), member
+Mcavernosa15977-RA	Stomatin
+Mcavernosa15974-RA	signal peptidase complex subunit 2 homolog (S. cerevisiae)
+Mcavernosa15988-RA	Mitogen-activated protein kinase kinase
+Mcavernosa15998-RA	
+Mcavernosa15985-RA	Kelch repeat and BTB (POZ) domain containing 4
+Mcavernosa15996-RA	hypoxia inducible factor 1, alpha subunit inhibitor
+Mcavernosa15995-RA	Protein kinase, cGMP-dependent, type
+Mcavernosa15993-RA	collagen, type
+Mcavernosa15994-RA	Protein kinase, cGMP-dependent, type
+Mcavernosa15992-RA	eukaryotic translation initiation factor
+Mcavernosa15986-RA	cadherin, EGF LAG seven-pass G-type receptor
+Mcavernosa16004-RA	Translocator protein
+Mcavernosa16006-RA	Mitogen-activated protein kinase kinase 5
+Mcavernosa16014-RA	EF-hand calcium binding domain 6
+Mcavernosa16000-RA	Amyloid beta (A4)
+Mcavernosa16008-RA	
+Mcavernosa16011-RA	transportin 3
+Mcavernosa16010-RA	centrosomal protein 290kDa
+Mcavernosa16016-RA	Transient receptor potential cation channel subfamily C member
+Mcavernosa16020-RA	BRCA1 associated protein
+Mcavernosa16023-RA	transmembrane emp24 domain trafficking protein 2
+Mcavernosa16017-RA	Galactose-3-O-sulfotransferase
+Mcavernosa16018-RA	Galactose-3-O-sulfotransferase
+Mcavernosa16019-RA	nudix (nucleoside diphosphate linked moiety X)-type motif 9
+Mcavernosa16025-RA	notchless homolog 1 (Drosophila)
+Mcavernosa16026-RA	transporter
+Mcavernosa16022-RA	PRP8 pre-mRNA processing factor 8 homolog (S. cerevisiae)
+Mcavernosa16031-RA	Serine threonine kinase 36
+Mcavernosa16028-RA	
+Mcavernosa16024-RA	Mitochondrial ribosomal protein L18
+Mcavernosa16032-RA	serine arginine-rich splicing factor
+Mcavernosa16021-RA	BRCA1 associated protein
+Mcavernosa16033-RA	Serine arginine-rich splicing factor 3
+Mcavernosa16036-RA	endoplasmic reticulum protein 29
+Mcavernosa16048-RA	Acyl-CoA thioesterase
+Mcavernosa16041-RA	Arylsulfatase
+Mcavernosa16044-RA	Bardet-Biedl syndrome 2
+Mcavernosa16040-RA	transporter activity
 Mcavernosa16046-RA	Acyl-CoA thioesterase
 Mcavernosa16043-RA	v-myb myeloblastosis viral oncogene homolog
 Mcavernosa16037-RA	Solute carrier organic anion transporter family member
@@ -15198,6 +15748,19 @@ Mcavernosa10537-RA	coenzyme Q10 homolog B (S. cerevisiae)
 Mcavernosa10521-RA	methyltransferase, like
 Mcavernosa10524-RA	Snail homolog 2 (Drosophila)
 Mcavernosa10531-RA	ectonucleotide pyrophosphatase phosphodiesterase
+Mcavernosa10525-RA	MKI67 (FHA domain) interacting nucleolar phosphoprotein
+Mcavernosa10536-RA	Bardet-Biedl syndrome 12
+Mcavernosa10535-RA	cAMP responsive element
+Mcavernosa10534-RA	chromosome 2 open reading frame 76
+Mcavernosa10541-RA	Heat shock 10kDa protein 1 (Chaperonin 10)
+Mcavernosa10543-RA	Inherit from opiNOG: solute carrier family 38, member
+Mcavernosa10542-RA	citrate synthase
+Mcavernosa10549-RA	WD domain, G-beta repeat
+Mcavernosa10546-RA	NACHT and WD repeat
+Mcavernosa10548-RA	cytochrome P450, family 20, subfamily A, polypeptide 1
+Mcavernosa10555-RA	Inherit from opiNOG: Hsp70 family
+Mcavernosa10556-RA	Cyclin-dependent kinase 20
+Mcavernosa10554-RA	Cyclin-dependent kinase 20
 Cladocopium58338_c0_seq1	transporter
 Cladocopium58360_c0_seq1	synthetase
 Cladocopium58373_c0_seq1	Inherit from inNOG: Putative methyltransferase (DUF3321)
@@ -15399,6 +15962,29 @@ Cladocopium61379_c0_seq1	serine threonine-protein phosphatase 4 regulatory subun
 Cladocopium61461_c0_seq1	oxidoreductase
 Cladocopium61488_c0_seq1	Family 2 glycosyl transferase
 Cladocopium61527_c0_seq1	and WD-40 domain protein
+Cladocopium61556_c0_seq1	glutamine amidotransferase
+Cladocopium61573_c0_seq1	whole genome shotgun sequence
+Cladocopium61573_c0_seq2	whole genome shotgun sequence
+Cladocopium61588_c0_seq1	DHHC palmitoyltransferase
+Cladocopium61627_c0_seq1	calcium-dependent protein kinase
+Cladocopium61635_c0_seq1	Pentatricopeptide repeat-containing protein
+Cladocopium61638_c0_seq1	Stage II sporulation protein E (SpoIIE)
+Cladocopium61690_c0_seq1	Appr-1-p processing domain protein
+Cladocopium61713_c0_seq1	Xanthine uracil
+Cladocopium61785_c0_seq1	Photosystem II stability assembly factor HCF136
+Cladocopium61792_c0_seq1	Glucosidase, alpha
+Cladocopium61795_c0_seq1	ATP-binding cassette, subfamily B (MDR TAP), member 10
+Cladocopium61804_c0_seq1	Exportin 1-like protein
+Cladocopium61812_c0_seq1	Polycystic kidney disease 2-like 1
+Cladocopium61847_c0_seq1	Sodium/calcium exchanger protein
+Cladocopium61863_c0_seq1	Sodium hydrogen exchanger
+Cladocopium61871_c0_seq1	nucleotide sugar dehydrogenase
+Cladocopium61885_c0_seq1	reductase
+Cladocopium61887_c0_seq1	leucine rich repeat
+Cladocopium61923_c0_seq1	Short chain dehydrogenase
+Cladocopium61983_c0_seq1	Responsible for synthesis of pseudouridine from uracil- 55 in the psi GC loop of transfer RNAs (By similarity)
+Cladocopium62027_c0_seq1	Catalyzes the conversion of inosine 5'-phosphate (IMP) to xanthosine 5'-phosphate (XMP), the first committed and rate- limiting step in the de novo synthesis of guanine nucleotides, and therefore plays an important role in the regulation of cell growth
+Cladocopium62039_c0_seq1	Pseudouridine synthase
 Mcavernosa10562-RA	inhibitor of growth family, member 3
 Mcavernosa10566-RA	heat shock
 Mcavernosa10565-RA	repeat protein
@@ -15669,6 +16255,27 @@ Mcavernosa11139-RA
 Mcavernosa11140-RA	tigger transposable element derived
 Mcavernosa11153-RA	piggyBac transposable element derived 4
 Mcavernosa11159-RA	Glycerol-3-phosphate dehydrogenase
+Mcavernosa11160-RA	Transmembrane protein 163
+Mcavernosa11162-RA	cysteine-serine-rich nuclear protein
+Mcavernosa11158-RA	Transmembrane protein 163
+Mcavernosa11161-RA	Protein phosphatase 1, regulatory subunit
+Mcavernosa11164-RA	harbinger transposase derived 1
+Mcavernosa11169-RA	dipeptidylpeptidase
+Mcavernosa11171-RA	Adaptor-related protein complex 4, beta 1 subunit
+Mcavernosa11168-RA	dipeptidylpeptidase
+Mcavernosa11167-RA	coiled-coil domain containing 51
+Mcavernosa11170-RA	beclin 1, autophagy related
+Mcavernosa11166-RA	LETM1 domain containing 1
+Mcavernosa11173-RA	atrial natriuretic peptide receptor 1-like
+Mcavernosa11177-RA	PRP4 pre-mRNA processing factor 4 homolog B (yeast)
+Mcavernosa11179-RA	Short chain dehydrogenase reductase family 42E, member 1
+Mcavernosa11181-RA	Chromosome 7 open reading frame 50
+Mcavernosa11183-RA	Lethal giant larvae homolog
+Mcavernosa11180-RA	Protein kinase, cAMP-dependent, regulatory, type I
+Mcavernosa11182-RA	Ankyrin repeat
+Mcavernosa11187-RA	SMG1 homolog, phosphatidylinositol 3-kinase-related kinase (C. elegans)
+Mcavernosa11185-RA	tRNA-histidine guanylyltransferase 1-like (S. cerevisiae)
+Mcavernosa11190-RA	SMG1 homolog, phosphatidylinositol 3-kinase-related kinase (C. elegans)
 Mcavernosa11191-RA	Chondroadherin-like
 Mcavernosa11184-RA	Chromosome 17 open reading frame 75
 Mcavernosa11186-RA	Charged multivesicular body protein 6
@@ -15911,12 +16518,12 @@ Mcavernosa09692-RA	EGF-like domain
 Mcavernosa09703-RA	CD151 molecule (Raph blood group)
 Mcavernosa09702-RA	CD151 molecule (Raph blood group)
 Mcavernosa09705-RA	Dynein, axonemal, intermediate chain 2
-Mcavernosa09710-RA	Sodium:neurotransmitter Cladocopiumporter family
+Mcavernosa09710-RA	Sodium:neurotransmitter symporter family
 Mcavernosa09718-RA	Calcyphosine-like
 Mcavernosa09717-RA	acyl-CoA dehydrogenase domain protein
 Mcavernosa09719-RA	glutamine amidotransferase
 Mcavernosa09715-RA	transporter
-Mcavernosa09714-RA	Sodium:neurotransmitter Cladocopiumporter family
+Mcavernosa09714-RA	Sodium:neurotransmitter symporter family
 Mcavernosa09713-RA	transporter
 Mcavernosa09712-RA	solute carrier family 6
 Mcavernosa09726-RA	Tctex1 domain containing
@@ -15963,6 +16570,28 @@ Mcavernosa09875-RA	coiled-coil domain containing 171
 Mcavernosa09881-RA	Uncharacterised ACR, YggU family COG1872
 Mcavernosa09877-RA	Ligand for members of the frizzled family of seven transmembrane receptors (By similarity)
 Mcavernosa09880-RA	Zinc finger protein
+Mcavernosa09885-RA	leucine rich repeat containing
+Mcavernosa09891-RA	Notch ligand involved in the mediation of Notch signaling (By similarity)
+Mcavernosa09895-RA	Notch ligand involved in the mediation of Notch signaling (By similarity)
+Mcavernosa09889-RA	neuronal pentraxin I
+Mcavernosa09892-RA	ankyrin repeat domain 40
+Mcavernosa09893-RA	HYR domain
+Mcavernosa09896-RA	Notch ligand involved in the mediation of Notch signaling (By similarity)
+Mcavernosa09898-RA	Neuronal pentraxin
+Mcavernosa09905-RA	Receptor
+Mcavernosa09907-RA	COMPASS (Complex proteins associated with Set1p) component shg1
+Mcavernosa09910-RA	solute carrier family 25 (mitochondrial iron transporter), member
+Mcavernosa09914-RA	Transient receptor potential cation channel subfamily C member
+Mcavernosa09913-RA	transient receptor potential cation channel, subfamily C, member 4
+Mcavernosa09911-RA	fibronectin type III and ankyrin repeat domains 1
+Mcavernosa09915-RA	chromosome 6 open reading frame 162
+Mcavernosa09909-RA	Suppressor of fused homolog (Drosophila)
+Mcavernosa09906-RA	RAB28, member RAS oncogene family
+Mcavernosa09912-RA	WD repeat domain 11
+Mcavernosa09931-RA	TAF3 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 140kDa
+Mcavernosa09926-RA	Chromosome 11 open reading frame 68
+Mcavernosa09928-RA	LEM domain containing
+Mcavernosa09924-RA	chymotrypsin-like elastase family member
 Mcavernosa09927-RA	Dehydrogenase
 Mcavernosa09947-RA	Aminoadipate-semialdehyde dehydrogenase-phosphopantetheinyl transferase
 Mcavernosa09938-RA	Inherit from euNOG: apoptosis-related cysteine peptidase
@@ -16231,6 +16860,28 @@ Mcavernosa21264-RA	DC-STAMP domain containing 1
 Mcavernosa21263-RA	mediator complex subunit 17
 Mcavernosa21269-RA	hedgehog acyltransferase
 Mcavernosa21270-RA	hedgehog acyltransferase
+Mcavernosa21273-RA	Zinc finger, C3HC4 type (RING finger)
+Mcavernosa21277-RA	kelch-like
+Mcavernosa21280-RA	Inherit from COG: leucine Rich Repeat
+Mcavernosa21272-RA	WD repeat-containing protein
+Mcavernosa21279-RA	MAGUK p55 subfamily member
+Mcavernosa21271-RA	Zinc finger, C3HC4 type (RING finger)
+Mcavernosa21274-RA	Zinc finger, CCHC domain containing 8
+Mcavernosa21282-RA	DnaJ (Hsp40) homolog, subfamily C, member 8
+Mcavernosa21283-RA	whole genome shotgun sequence
+Mcavernosa21285-RA	Zinc finger, NFX1-type containing 1
+Mcavernosa21284-RA	Immunity-related GTPase family
+Mcavernosa21281-RA	QKI, KH domain containing, RNA binding
+Mcavernosa21287-RA	Zinc finger, NFX1-type containing 1
+Mcavernosa21296-RA	Inherit from KOG: F-box and leucine-rich repeat protein
+Mcavernosa21297-RA	ring finger protein 25
+Mcavernosa21295-RA	LRR
+Mcavernosa21290-RA	heterogeneous nuclear ribonucleoprotein
+Mcavernosa21293-RA	ubiquitin-conjugating enzyme E2G 1
+Mcavernosa21306-RA	T-box transcription factor
+Mcavernosa21302-RA	biphenyl hydrolase-like (serine hydrolase
+Mcavernosa21299-RA	anhydrase
+Mcavernosa21305-RA	rad9 homolog
 Mcavernosa21307-RA	T-box transcription factor
 Mcavernosa21308-RA	AFG1-like ATPase
 Mcavernosa21309-RA	phosphorylase kinase, gamma
@@ -19437,7 +20088,7 @@ Mcavernosa24161-RA	Transmembrane protein 246
 Mcavernosa24152-RA	protein phosphatase, Mg2 Mn2 dependent
 Mcavernosa24157-RA	NADH dehydrogenase (Ubiquinone) Fe-S protein 8, 23kDa (NADH-coenzyme Q reductase)
 Mcavernosa24153-RA	tripartite motif containing 37
-Mcavernosa24158-RA	Catalytic subunit of the SLX1-SLX4 structure-specific endonuclease that resolves DNA secondary structures generated during DNA repair and recombination. Has endonuclease activity towards branched DNA substrates, introducing single-strand cuts in duplex DNA close to junctions with ss-DNA. Has a preference for 5'-flap structures, and promotes Cladocopiummetrical cleavage of static and migrating Holliday junctions (HJs). Resolves HJs by generating two pairs of ligatable, nicked duplex products
+Mcavernosa24158-RA	Catalytic subunit of the SLX1-SLX4 structure-specific endonuclease that resolves DNA secondary structures generated during DNA repair and recombination. Has endonuclease activity towards branched DNA substrates, introducing single-strand cuts in duplex DNA close to junctions with ss-DNA. Has a preference for 5'-flap structures, and promotes symmetrical cleavage of static and migrating Holliday junctions (HJs). Resolves HJs by generating two pairs of ligatable, nicked duplex products
 Mcavernosa24154-RA	tektin 5
 Mcavernosa24156-RA	transmembrane protein 17
 Mcavernosa24159-RA	SRR1 domain containing
@@ -20575,7 +21226,7 @@ Mcavernosa33677-RA	Unc-13 homolog
 Mcavernosa33680-RA	G- protein-coupled receptor
 Mcavernosa33686-RA	Peroxidasin homolog
 Mcavernosa33691-RA	Protein tyrosine phosphatase receptor type
-Mcavernosa33696-RA	Myotubularin protein
+Mcavernosa33696-RA	uDENN
 Mcavernosa33692-RA	Inherit from opiNOG: Cyclic nucleotide-binding domain
 Mcavernosa33702-RA	Topoisomerase (DNA) I
 Mcavernosa33703-RA	Topoisomerase (DNA) I
@@ -23402,7 +24053,7 @@ Mcavernosa16985-RA	Macro domain
 Mcavernosa16991-RA	Transmembrane and tetratricopeptide repeat containing
 Mcavernosa16994-RA	mannose-P-dolichol utilization defect 1
 Mcavernosa16995-RA	mannose-P-dolichol utilization defect 1
-Mcavernosa17006-RA	Nucleoside H+ Cladocopiumporter
+Mcavernosa17006-RA	Nucleoside H+ symporter
 Mcavernosa16999-RA	Niemann-Pick disease, type C2
 Mcavernosa17003-RA	Ribosomal protein S19
 Mcavernosa16997-RA	Niemann-Pick disease, type C2
@@ -24361,7 +25012,7 @@ Cladocopium72242_c0_seq1	multiple C2 domains, transmembrane 2
 Cladocopium72274_c0_seq1	Methyltransferase
 Cladocopium72299_c0_seq1	ankyrin 3, node of Ranvier (ankyrin G)
 Cladocopium72308_c0_seq1	
-Cladocopium72312_c0_seq1	Sodium Bile acid Cladocopiumporter family
+Cladocopium72312_c0_seq1	Sodium Bile acid symporter family
 Cladocopium72329_c0_seq1	DEAH (Asp-Glu-Ala-His) box polypeptide
 Cladocopium72342_c0_seq1	solute carrier family 35 (CMP-sialic acid transporter), member A1
 Cladocopium72359_c0_seq1	alcohol dehydrogenase
@@ -24858,7 +25509,7 @@ Cladocopium76868_c0_seq1	Mitotic centromere-associated kinesin (MCAK)
 Cladocopium76870_c0_seq1	methyltransferase like 15
 Cladocopium76874_c0_seq1	ubiquitin
 Cladocopium76886_c0_seq1	Glycoside hydrolase family 5
-Cladocopium76892_c0_seq1	Sodium:solute Cladocopiumporter family
+Cladocopium76892_c0_seq1	Sodium:solute symporter family
 Cladocopium76892_c0_seq2	solute carrier family 5 (sodium glucose cotransporter), member
 Cladocopium76918_c0_seq1	Protein inhibitor of activated STAT
 Cladocopium76930_c0_seq1	Ycf3 protein
@@ -26336,7 +26987,7 @@ Cladocopium96275_c0_seq1	Pfam:DUF821
 Cladocopium96277_c0_seq1	insulin-degrading enzyme
 Cladocopium96279_c0_seq1	homolog subfamily B member
 Cladocopium96290_c0_seq1	alanyl-tRNA synthetase
-Cladocopium96293_c0_seq1	Cell membrane polyamine proton Cladocopiumporter involved in the polyamine uptake in cells. Possesses high affinity for spermidine and lower affinity for spermine and putrescine. Transports paraquat, a polyamine analog, and thus confers sensitivity to this chemical which is used as
+Cladocopium96293_c0_seq1	Cell membrane polyamine proton symporter involved in the polyamine uptake in cells. Possesses high affinity for spermidine and lower affinity for spermine and putrescine. Transports paraquat, a polyamine analog, and thus confers sensitivity to this chemical which is used as
 Cladocopium96302_c0_seq1	Family with sequence similarity 108, member
 Cladocopium96313_c0_seq1	Amidohydrolase family
 Cladocopium96319_c0_seq1	Zinc finger C-x8-C-x5-C-x3-H type (and similar)
@@ -26391,6 +27042,7 @@ Cladocopium97185_c0_seq1	serine protease
 Cladocopium97203_c0_seq1	ABC transporter
 Cladocopium97208_c0_seq1	DNA repair and recombination protein RAD26-like
 Cladocopium97208_c0_seq2	SNF2 family N-terminal domain
+Cladocopium97221_c0_seq1	PTS system mannose-specific, factor IIC
 Cladocopium97222_c0_seq1	Glycyl-tRNA synthetase
 Cladocopium97262_c0_seq1	DNA polymerase
 Cladocopium97265_c0_seq1	capping protein (actin filament) gelsolin-like
@@ -26565,7 +27217,7 @@ Cladocopium100930_c0_seq1	Nucleoside-triphosphatase, cancer-related
 Cladocopium100930_c0_seq2	Nucleoside-triphosphatase, cancer-related
 Cladocopium100939_c0_seq2	DNA repair
 Cladocopium101000_c0_seq1	(RNA) helicase
-Cladocopium101015_c0_seq1	Sodium Bile acid Cladocopiumporter family
+Cladocopium101015_c0_seq1	Sodium Bile acid symporter family
 Cladocopium101053_c0_seq1	Rna-binding protein
 Cladocopium101077_c0_seq1	alanine--glyoxylate aminotransferase 2-like
 Cladocopium101083_c0_seq1	ATP-binding cassette sub-family A member
@@ -27563,7 +28215,7 @@ Cladocopium26359_c0_seq1	Cation-transporting atpase
 Cladocopium26368_c0_seq1	
 Cladocopium26368_c0_seq2	
 Cladocopium26372_c0_seq1	Required for a late step of 50S ribosomal subunit assembly. Has GTPase activity (By similarity)
-Cladocopium26379_c0_seq1	Essential arginine methyltransferase that can both catalyze the formation of omega-N monomethylarginine (MMA) and Cladocopiummetrical dimethylarginine (sDMA). Specifically mediates the Cladocopiummetrical dimethylation of arginine residues in the small nuclear ribonucleoproteins SmD1 and SmD3
+Cladocopium26379_c0_seq1	Essential arginine methyltransferase that can both catalyze the formation of omega-N monomethylarginine (MMA) and symmetrical dimethylarginine (sDMA). Specifically mediates the symmetrical dimethylation of arginine residues in the small nuclear ribonucleoproteins SmD1 and SmD3
 Cladocopium26427_c0_seq1	Sugar (and other) transporter
 Cladocopium26437_c0_seq1	Dihydroxyacetone kinase
 Cladocopium26467_c0_seq1	aminopeptidase
@@ -29025,8 +29677,8 @@ Cladocopium117470_c0_seq1	ATP-dependent Clp protease ATP-binding subunit clpA ho
 Cladocopium117472_c0_seq1	Sir2 family
 Cladocopium117474_c0_seq1	Cytochrome p450
 Cladocopium117476_c0_seq1	reductase
-Cladocopium117478_c0_seq1	Sodium:dicarboxylate Cladocopiumporter family
-Cladocopium117478_c0_seq2	Sodium:dicarboxylate Cladocopiumporter family
+Cladocopium117478_c0_seq1	Sodium:dicarboxylate symporter family
+Cladocopium117478_c0_seq2	Sodium:dicarboxylate symporter family
 Cladocopium117484_c0_seq1	PHOsphatase
 Cladocopium117489_c0_seq1	Aminotransferase class-III
 Cladocopium117490_c0_seq1	PHB
@@ -30657,10 +31309,10 @@ Cladocopium152369_c0_seq1	mitogen-activated protein kinase kinase kinase
 Cladocopium152399_c0_seq1	sphingosine-1-phosphate lyase 1
 Cladocopium152423_c0_seq1	Inherit from NOG: Methyltransferase, type
 Cladocopium152437_c1_seq1	Protein inhibitor of activated STAT
-Cladocopium152438_c1_seq1	D-xylose-proton Cladocopiumporter-like
-Cladocopium152438_c1_seq2	D-xylose-proton Cladocopiumporter-like
-Cladocopium152438_c1_seq3	carbohydrate transmembrane transporter fructose transmembrane transporter glucose transmembrane transporter sugar hydrogen Cladocopiumporter
-Cladocopium152438_c1_seq4	D-xylose-proton Cladocopiumporter-like
+Cladocopium152438_c1_seq1	D-xylose-proton symporter-like
+Cladocopium152438_c1_seq2	D-xylose-proton symporter-like
+Cladocopium152438_c1_seq3	carbohydrate transmembrane transporter fructose transmembrane transporter glucose transmembrane transporter sugar hydrogen symporter
+Cladocopium152438_c1_seq4	D-xylose-proton symporter-like
 Cladocopium152443_c0_seq1	Aamy_C
 Cladocopium152443_c0_seq2	Aamy_C
 Cladocopium152454_c0_seq1	Peptidase family S49 N-terminal
@@ -31634,8 +32286,8 @@ Cladocopium163303_c0_seq2	OTU-like cysteine protease
 Cladocopium163310_c0_seq1	phosphoenolpyruvate carboxylase kinase
 Cladocopium163323_c0_seq1	L-carnitine dehydratase bile acid-inducible protein F
 Cladocopium163360_c0_seq1	Retinal pigment epithelial membrane protein
-Cladocopium163395_c0_seq1	Sodium Bile acid Cladocopiumporter family
-Cladocopium163395_c0_seq3	Sodium Bile acid Cladocopiumporter family
+Cladocopium163395_c0_seq1	Sodium Bile acid symporter family
+Cladocopium163395_c0_seq3	Sodium Bile acid symporter family
 Cladocopium163397_c0_seq1	4'-phosphopantetheinyl transferase superfamily
 Cladocopium163405_c0_seq1	DSPc
 Cladocopium163419_c0_seq1	Inherit from opiNOG: Poly (ADP-ribose) polymerase family, member
@@ -32278,10 +32930,10 @@ Cladocopium34928_c0_seq1	MORN repeat containing
 Cladocopium34928_c0_seq2	whole genome shotgun sequence
 Cladocopium34957_c0_seq1	Egl nine homolog
 Cladocopium34958_c0_seq1	AAA domain (dynein-related subfamily)
-Cladocopium34959_c0_seq1	Required for cytoplasmic partitioning and aCladocopiummetric cell division in early embryogenesis. Phosphorylates and restricts the aCladocopiummetry effector mex-5 (and possibly also mex-6) to the anterior cytoplasm of the zygote. Critical role in postembryonic vulval morphogenesis
+Cladocopium34959_c0_seq1	Required for cytoplasmic partitioning and asymmetric cell division in early embryogenesis. Phosphorylates and restricts the asymmetry effector mex-5 (and possibly also mex-6) to the anterior cytoplasm of the zygote. Critical role in postembryonic vulval morphogenesis
 Cladocopium34980_c0_seq1	Alcohol dehydrogenase zinc-binding domain protein
 Cladocopium34988_c0_seq1	tRNA phosphotransferase 1
-Cladocopium34990_c0_seq1	Sodium Bile acid Cladocopiumporter family
+Cladocopium34990_c0_seq1	Sodium Bile acid symporter family
 Cladocopium35005_c0_seq1	PPIases accelerate the folding of proteins (By similarity)
 Cladocopium35006_c0_seq1	Pfam:efhand
 Cladocopium35007_c0_seq1	Major Facilitator Superfamily
@@ -32745,6 +33397,7 @@ Cladocopium173321_c0_seq4	FIZZY-related
 Cladocopium173321_c0_seq5	fizzy-related 2
 Cladocopium173323_c0_seq1	ankyrin 3, node of Ranvier (ankyrin G)
 Cladocopium173357_c0_seq1	catechol O-methyltransferase (EC 2.1.1.6)
+Cladocopium173373_c0_seq1	SET domain
 Cladocopium173376_c0_seq1	Ankyrin Repeat Protein
 Cladocopium173376_c0_seq2	Ankyrin Repeat Protein
 Cladocopium173390_c0_seq1	DIP2 disco-interacting protein 2 homolog
@@ -32766,7 +33419,7 @@ Cladocopium173600_c0_seq2	dUTPase
 Cladocopium173620_c0_seq1	leucine rich repeat
 Cladocopium173639_c1_seq1	AarF domain containing kinase
 Cladocopium173658_c0_seq1	inositol monophosphatase
-Cladocopium173664_c0_seq1	Sodium:sulfate Cladocopiumporter transmembrane region
+Cladocopium173664_c0_seq1	Sodium:sulfate symporter transmembrane region
 Cladocopium173714_c0_seq1	purine NTP-dependent helicase activity
 Cladocopium173714_c0_seq2	purine NTP-dependent helicase activity
 Cladocopium173722_c0_seq1	glutaredoxin 2
@@ -33263,12 +33916,12 @@ Cladocopium179141_c0_seq1	Polymerase (DNA directed), lambda
 Cladocopium179141_c0_seq2	Polymerase (DNA directed), lambda
 Cladocopium179142_c0_seq1	calcium-dependent protein kinase
 Cladocopium179145_c0_seq1	serologically defined colon cancer antigen 1
-Cladocopium179147_c0_seq1	Sodium Bile acid Cladocopiumporter family
-Cladocopium179147_c0_seq2	Sodium Bile acid Cladocopiumporter family
-Cladocopium179147_c0_seq3	Sodium Bile acid Cladocopiumporter family
-Cladocopium179147_c0_seq4	Sodium Bile acid Cladocopiumporter family
-Cladocopium179147_c0_seq5	Sodium Bile acid Cladocopiumporter family
-Cladocopium179147_c0_seq6	Sodium Bile acid Cladocopiumporter family
+Cladocopium179147_c0_seq1	Sodium Bile acid symporter family
+Cladocopium179147_c0_seq2	Sodium Bile acid symporter family
+Cladocopium179147_c0_seq3	Sodium Bile acid symporter family
+Cladocopium179147_c0_seq4	Sodium Bile acid symporter family
+Cladocopium179147_c0_seq5	Sodium Bile acid symporter family
+Cladocopium179147_c0_seq6	Sodium Bile acid symporter family
 Cladocopium179156_c0_seq1	glycosyl transferase
 Cladocopium179193_c0_seq1	Cytochrome b5-like Heme/Steroid binding domain
 Cladocopium179197_c0_seq1	NIMA-related kinase 8
@@ -33526,7 +34179,7 @@ Cladocopium181353_c0_seq2	cAMP-dependent protein kinase regulatory subunit
 Cladocopium181356_c0_seq1	plus-end-directed microtubule motor activity
 Cladocopium181356_c0_seq2	plus-end-directed microtubule motor activity
 Cladocopium181362_c0_seq1	
-Cladocopium181370_c0_seq1	D-xylose-proton Cladocopiumporter-like
+Cladocopium181370_c0_seq1	D-xylose-proton symporter-like
 Cladocopium181372_c0_seq2	Family with sequence similarity 108, member
 Cladocopium181372_c0_seq3	Family with sequence similarity 108, member
 Cladocopium181372_c0_seq4	Family with sequence similarity 108, member
@@ -35270,7 +35923,7 @@ Cladocopium195191_c0_seq4	NB-ARC domain
 Cladocopium195216_c0_seq2	Carrier of the growing fatty acid chain in fatty acid biosynthesis (By similarity)
 Cladocopium195275_c0_seq2	Lipase (class 3)
 Cladocopium195312_c0_seq3	Solute carrier family 13
-Cladocopium195312_c0_seq4	sodium sulphate Cladocopiumporter
+Cladocopium195312_c0_seq4	sodium sulphate symporter
 Cladocopium195341_c1_seq1	phosphoglycerate kinase
 Cladocopium195357_c0_seq1	Mo25-like
 Cladocopium195443_c0_seq1	Poly (ADP-ribose) polymerase 1
@@ -35286,8 +35939,8 @@ Cladocopium195497_c0_seq1	LON peptidase N-terminal domain and ring finger 3
 Cladocopium195497_c0_seq2	LON peptidase N-terminal domain and ring finger 3
 Cladocopium195539_c0_seq1	ABC transporter
 Cladocopium195539_c0_seq2	ABC transporter
-Cladocopium195542_c0_seq1	Sodium:dicarboxylate Cladocopiumporter family
-Cladocopium195542_c0_seq2	Sodium:dicarboxylate Cladocopiumporter family
+Cladocopium195542_c0_seq1	Sodium:dicarboxylate symporter family
+Cladocopium195542_c0_seq2	Sodium:dicarboxylate symporter family
 Cladocopium195562_c0_seq1	transmembrane 9 superfamily member
 Cladocopium195568_c0_seq1	tryptophan synthase
 Cladocopium195591_c1_seq1	Inorganic H+ pyrophosphatase
@@ -35739,7 +36392,7 @@ Cladocopium200095_c0_seq2	amino acid
 Cladocopium200103_c0_seq1	Polycystin cation channel
 Cladocopium200108_c0_seq1	taurine catabolism dioxygenase TauD, TfdA
 Cladocopium200108_c0_seq2	Taurine catabolism dioxygenase TauD, TfdA family
-Cladocopium200119_c1_seq1	sites to release the intron. The products are an intron and two tRNA half-molecules bearing 2',3' cyclic phosphate and 5'-OH termini. Recognizes a pseudoCladocopiummetric substrate in which 2 bulged loops of 3 bases are separated by a stem of 4 bp (By similarity)
+Cladocopium200119_c1_seq1	sites to release the intron. The products are an intron and two tRNA half-molecules bearing 2',3' cyclic phosphate and 5'-OH termini. Recognizes a pseudosymmetric substrate in which 2 bulged loops of 3 bases are separated by a stem of 4 bp (By similarity)
 Cladocopium200120_c0_seq1	RNA methyltransferase, TrmA family
 Cladocopium200120_c0_seq2	RNA methyltransferase, TrmA family
 Cladocopium200120_c0_seq3	RNA methyltransferase, TrmA family
@@ -36725,7 +37378,7 @@ Cladocopium208990_c0_seq2	60S ribosomal protein L36
 Cladocopium208995_c0_seq1	glycogen biosynthetic process
 Cladocopium208995_c0_seq2	glycogen biosynthetic process
 Cladocopium208995_c0_seq3	Branching enzyme
-Cladocopium208998_c0_seq1	Sodium Bile acid Cladocopiumporter family
+Cladocopium208998_c0_seq1	Sodium Bile acid symporter family
 Cladocopium209016_c0_seq1	Ion transport protein
 Cladocopium209035_c0_seq1	phosphodiesterase
 Cladocopium209051_c0_seq1	Pfam:DUF862
@@ -39360,7 +40013,7 @@ Cladocopium41273_c0_seq1	kelch-like
 Cladocopium41273_c0_seq2	BACK
 Cladocopium41281_c0_seq1	ADP-ribosylation factor
 Cladocopium41287_c0_seq1	Poxvirus serine/threonine protein kinase
-Cladocopium41304_c1_seq1	Sodium:solute Cladocopiumporter family
+Cladocopium41304_c1_seq1	Sodium:solute symporter family
 Cladocopium41305_c0_seq1	Ras-related protein
 Cladocopium41309_c0_seq1	WD repeat domain 65
 Cladocopium41317_c0_seq1	Uncharacterized conserved protein (DUF2183)
@@ -40249,7 +40902,7 @@ Cladocopium230539_c0_seq34	Converts 2,5-diamino-6-(ribosylamino)-4(3h)-pyrimidin
 Cladocopium230539_c0_seq35	Converts 2,5-diamino-6-(ribosylamino)-4(3h)-pyrimidinone 5'-phosphate into 5-amino-6-(ribosylamino)-2,4(1h,3h)- pyrimidinedione 5'-phosphate
 Cladocopium230539_c0_seq36	Converts 2,5-diamino-6-(ribosylamino)-4(3h)-pyrimidinone 5'-phosphate into 5-amino-6-(ribosylamino)-2,4(1h,3h)- pyrimidinedione 5'-phosphate
 Cladocopium230556_c0_seq5	Pentatricopeptide repeat-containing protein
-Cladocopium230556_c0_seq7	PPR repeat
+Cladocopium230556_c0_seq7	Pentatricopeptide repeat-containing protein
 Cladocopium230556_c0_seq8	Pentatricopeptide repeat-containing protein
 Cladocopium230556_c0_seq13	Pentatricopeptide repeat-containing protein
 Cladocopium230567_c0_seq1	Beta-lactamase inhibitory protein
@@ -41204,8 +41857,8 @@ Cladocopium236585_c0_seq5	This protein is an auxiliary protein of DNA polymerase
 Cladocopium236585_c0_seq6	This protein is an auxiliary protein of DNA polymerase delta and is involved in the control of eukaryotic DNA replication by increasing the polymerase's processibility during elongation of the leading strand (By similarity)
 Cladocopium236585_c0_seq7	This protein is an auxiliary protein of DNA polymerase delta and is involved in the control of eukaryotic DNA replication by increasing the polymerase's processibility during elongation of the leading strand (By similarity)
 Cladocopium236585_c0_seq8	This protein is an auxiliary protein of DNA polymerase delta and is involved in the control of eukaryotic DNA replication by increasing the polymerase's processibility during elongation of the leading strand (By similarity)
-Cladocopium236604_c0_seq1	Sodium:sulfate Cladocopiumporter transmembrane region
-Cladocopium236604_c0_seq2	Sodium:sulfate Cladocopiumporter transmembrane region
+Cladocopium236604_c0_seq1	Sodium:sulfate symporter transmembrane region
+Cladocopium236604_c0_seq2	Sodium:sulfate symporter transmembrane region
 Cladocopium236623_c1_seq1	RNA recognition motif 2
 Cladocopium236627_c0_seq1	CysPc
 Cladocopium236637_c0_seq1	Moloney leukemia virus 10, homolog
@@ -41626,7 +42279,7 @@ Cladocopium43456_c0_seq1
 Cladocopium43460_c0_seq1	Family with sequence similarity 108, member
 Cladocopium43466_c0_seq1	extended synaptotagmin-like protein
 Cladocopium43476_c0_seq1	Fibrinogen beta and gamma chains, C-terminal globular domain
-Cladocopium43480_c0_seq1	Sodium:solute Cladocopiumporter family
+Cladocopium43480_c0_seq1	Sodium:solute symporter family
 Cladocopium43487_c0_seq1	NIMA-related kinase
 Cladocopium43491_c0_seq1	Leucine-rich repeat receptor-like protein kinase
 Cladocopium43515_c0_seq1	2-aminoethylphosphonate pyruvateaminotransferas e-like protein
