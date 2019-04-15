@@ -1,4 +1,4 @@
-# Transcriptome Annotation, version Apr 8, 2019
+# Transcriptome Annotation, version Apr 10, 2019
 # Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (mstudiva@fau.edu)
 # for use in generating transcriptome annotation files for Montastraea cavernosa
 # also includes the concatention of M. cavernosa and Cladocopium sp. (formerly Symbiodinium Clade C) transcriptomes
@@ -31,6 +31,10 @@ git clone https://github.com/z0on/emapper_to_GOMWU_KOGMWU.git
 mv emapper_to_GOMWU_KOGMWU/* .
 rm -rf emapper_to_GOMWU_KOGMWU
 
+git clone https://github.com/mstudiva/Mcav-Annotated-Transcriptome
+mv Mcav-Annotated-Transcriptome/* .
+rm -rf Mcav-Annotated-Transcriptome
+
 # creating backup directory
 mkdir backup
 
@@ -48,9 +52,7 @@ cd annotate
 # updated (July 2018) M. cavernosa genome with transcriptome
 wget https://www.dropbox.com/s/0inwmljv6ti643o/Mcavernosa_genome.tgz
 tar -xzf Mcavernosa_genome.tgz
-cd Mcav_genome/Mcavernosa_annotation/
-cp Mcavernosa.maker.transcripts.fasta ../..
-cd ../..
+cp Mcav_genome/Mcavernosa_annotation/Mcavernosa.maker.transcripts.fasta .
 mv Mcavernosa.maker.transcripts.fasta Mcavernosa.fasta
 
 # old version, commented out for now
@@ -93,6 +95,10 @@ echo 'wget ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgeba
 gunzip uniprot_sprot.fasta.gz &
 gunzip idmapping_selected.tab.gz &
 
+# for trinity-assembled transcriptomes: annotating with "Cladocopium" or "Mcavernosa" depending on if component is from symbiont or host (=component)
+grep ">" Mcavernosa_Cladocopium.fasta | perl -pe 's/>Cladocopium(\d+)(\S+)\s.+/Cladocopium$1$2\tCladocopium$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+)\s.+/Mcavernosa$1$2\tMcavernosa$1/'>Mcavernosa_Cladocopium_seq2iso.tab
+cat Mcavernosa_Cladocopium.fasta | perl -pe 's/>Cladocopium(\d+)(\S+).+/>Cladocopium$1$2 gene=Cladocopium$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+).+/>Mcavernosa$1$2 gene=Mcavernosa$1/'>Mcavernosa_Cladocopium_iso.fasta
+
 # indexing the fasta database
 # update 4/4/19: KoKo's launcher_creator is having trouble with some of the python/anaconda modules, which blast uses
 # instead of loading the blast module first, create the job script, then add the module load statement into the script manually
@@ -106,11 +112,11 @@ sbatch mdb.slurm
 module unload blast
 
 # splitting the transcriptome into 190 chunks
-splitFasta.pl Mcavernosa_Cladocopium.fasta 190
+splitFasta.pl Mcavernosa_Cladocopium_iso.fasta 190
 
 # blasting all 190 chunks to uniprot in parallel, 4 cores per chunk
 ls subset* | perl -pe 's/^(\S+)$/blastx -query $1 -db uniprot_sprot\.fasta -evalue 0\.0001 -num_threads 4 -num_descriptions 5 -num_alignments 5 -out $1.br/'>bl
-launcher_creator.py -j bl -n blast -t 2:00:00 -q shortq7 -N 8 -e mstudiva@fau.edu
+launcher_creator.py -j bl -n blast -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
 nano blast.slurm
 # add 'module load blast' after the 'module load launcher' line
 # save with ctrl + x
@@ -127,13 +133,10 @@ module unload blast
 cat subset*br > myblast.br
 mv subset* ~/backup/.
 
-# for trinity-assembled transcriptomes: annotating with "Cladocopium" or "Mcavernosa" depending on if component is from symbiont or host (=component)
-grep ">" Mcavernosa_Cladocopium.fasta | perl -pe 's/>Cladocopium(\d+)(\S+)\s.+/Cladocopium$1$2\tCladocopium$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+)\s.+/Mcavernosa$1$2\tMcavernosa$1/'>Mcavernosa_Cladocopium_seq2iso.tab
-cat Mcavernosa_Cladocopium.fasta | perl -pe 's/>Cladocopium(\d+)(\S+).+/>Cladocopium$1$2 gene=Cladocopium$1/' | perl -pe 's/>Mcavernosa(\d+)(\S+).+/>Mcavernosa$1$2 gene=Mcavernosa$1/'>Mcavernosa_Cladocopium_iso.fasta
-
 #-------------------------
-# extracting gene names (per isogroup):
-getGeneNameFromUniProtKB.pl blast=myblast.br prefix=Mcavernosa_Cladocopium fastaQuery=Mcavernosa_Cladocopium_iso.fasta
+# extracting gene names (per Mcavernosa and Cladocopium isogroups):
+# not needed, but keeping just in case
+# getGeneNameFromUniProtKB_MS.pl blast=myblast.br prefix=Mcavernosa_Cladocopium fastaQuery=Mcavernosa_Cladocopium_iso.fasta
 
 # old code, commenting out for now
 # extracting GO annotations (per isogroup)
@@ -142,9 +145,16 @@ getGeneNameFromUniProtKB.pl blast=myblast.br prefix=Mcavernosa_Cladocopium fasta
 # sbatch gg
 
 # extracting coding sequences and corresponding protein translations:
-echo "perl ~/bin/CDS_extractor_v2.pl Mcavernosa_Cladocopium_iso.fasta myblast.br allhits bridgegaps" >cds
+echo "perl ~/bin/CDS_extractor_MS.pl Mcavernosa_Cladocopium_iso.fasta myblast.br allhits bridgegaps" >cds
 launcher_creator.py -j cds -n cds -l cddd -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
 sbatch cddd
+
+# use the stream editor to remove all instances of "gene=" from the query IDs in the CDS_extractor outputs
+sed -i 's/gene=//g' Mcavernosa_Cladocopium_iso_CDSends.fas
+sed -i 's/gene=//g' Mcavernosa_Cladocopium_iso_CDS.fas
+sed -i 's/gene=//g' Mcavernosa_Cladocopium_iso_hits.tab
+sed -i 's/gene=//g' Mcavernosa_Cladocopium_iso_PROends.fas
+sed -i 's/gene=//g' Mcavernosa_Cladocopium_iso_PRO.fas
 
 # calculating contiguity:
 contiguity.pl hits=Mcavernosa_Cladocopium_iso_hits.tab threshold=0.75
@@ -181,9 +191,9 @@ cd /path/to/local/directory
 scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/*_PRO.fas .
 
 # copy link to job ID status and output file, paste it below instead of current link:
-# check status: go on web to http://eggnogdb.embl.de/#/app/emapper?jobname=MM_8IOrjV
+# check status: go on web to http://eggnogdb.embl.de/#/app/emapper?jobname=MM_zoLnia
 # once it is done, download results to HPC:
-wget http://eggnogdb.embl.de/MM_8IOrjV/Mcavernosa_Cladocopium_iso_PRO.fas.emapper.annotations
+wget http://eggnogdb.embl.de/MM_zoLnia/Mcavernosa_Cladocopium_iso_PRO.fas.emapper.annotations
 
 # GO:
 awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$6 }' Mcavernosa_Cladocopium_iso_PRO.fas.emapper.annotations | grep GO | perl -pe 's/,/;/g' >Mcavernosa_Cladocopium_iso2go.tab
@@ -220,9 +230,9 @@ scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/Mcavernosa_Cladocopium_4
 # use web browser to submit Mcavernosa_Cladocopium_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
 # select SBH method, upload nucleotide query
 # Once it is done, download the 'text' output from KAAS, name it query.ko (default)
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1554491498&key=u2L1RtYi
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1554911294&key=Z0gRHwNC
 
-wget https://www.genome.jp/tools/kaas/files/dl/1554491498/query.ko
+wget https://www.genome.jp/tools/kaas/files/dl/1554911294/query.ko
 
 # selecting only the lines with non-missing annotation:
 cat query.ko | awk '{if ($2!="") print }' > Mcavernosa_Cladocopium_iso2kegg.tab
