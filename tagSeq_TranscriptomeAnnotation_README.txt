@@ -206,7 +206,7 @@ scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/Mcavernosa_Cladocopium_4
 # Once it is done, download the 'text' output from KAAS, name it query.ko (default)
 https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1556130193&key=KCa76L0E
 
-wget https://www.genome.jp/tools/kaas/files/dl/1554911294/query.ko
+wget https://www.genome.jp/tools/kaas/files/dl/1556130193/query.ko
 
 # selecting only the lines with non-missing annotation:
 cat query.ko | awk '{if ($2!="") print }' > Mcavernosa_Cladocopium_iso2kegg.tab
