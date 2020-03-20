@@ -1,11 +1,11 @@
-# Transcriptome Annotation, version Apr 23, 2019
-# Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (mstudiva@fau.edu)
+# Transcriptome Annotation, version March 20, 2020
+# Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (studivanms@gmail.com)
 # for use in generating transcriptome annotation files for Montastraea cavernosa
 # also includes the concatention of M. cavernosa and Cladocopium sp. (formerly Symbiodinium Clade C) transcriptomes
 
 #------------------------------
 # BEFORE STARTING, replace, in this whole file:
-#	- mstudiva@fau.edu by your actual email;
+#	- studivanms@gmail.com by your actual email;
 #	- mstudiva with your KoKo user name.
 
 # The idea is to copy the chunks separated by empty lines below and paste them into your cluster
@@ -43,6 +43,12 @@ cd
 mkdir annotate
 cd annotate
 
+# original transcriptome from Kitchen et al (2015)
+# M. cavernosa transcriptome, v1 (2014)
+# wget http://meyerlab:coral@files.cgrb.oregonstate.edu/Meyer_Lab/transcriptomes/Mcav/Mcav_transcriptome_v1.fasta.gz
+# gunzip Mcav_transcriptome_v1.fasta.gz
+# mv Mcav_transcriptome_v1.fasta Mcavernosa.fasta
+
 # updated (July 2018) M. cavernosa genome with transcriptome
 wget https://www.dropbox.com/s/0inwmljv6ti643o/Mcavernosa_genome.tgz
 tar -xzf Mcavernosa_genome.tgz
@@ -65,14 +71,25 @@ cat Cladocopium.fasta Mcavernosa.fasta > Mcavernosa_Cladocopium.fasta
 # transcriptome statistics
 seq_stats.pl Mcavernosa_Cladocopium.fasta > seqstats_Mcavernosa_Cladocopium.txt
 nano seqstats_Mcavernosa_Cladocopium.txt
-# 90980 sequences
+
+# Mcavernosa_Cladocopium.fasta
+# -------------------------
+# 90980 sequences.
+# 1465 average length.
+# 43960 maximum length.
+# 75 minimum length.
+# N50 = 1798
+# 133.3 Mb altogether (133273996 bp).
+# 0 ambiguous Mb. (1637 bp, 0%)
+# 0 Mb of Ns. (1637 bp, 0%)
+# -------------------------
 
 # getting uniprot_swissprot KB database
 wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 
 # getting annotations (this file is large, may take a while)
 echo 'wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz '> getz
-launcher_creator.py -j getz -n getz -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
+launcher_creator.py -j getz -n getz -t 6:00:00 -q shortq7 -e studivanms@gmail.com
 sbatch getz.slurm
 
 # if the US mirror is down, uncomment the line below, then run the getz script as normal
@@ -83,34 +100,22 @@ gunzip uniprot_sprot.fasta.gz &
 gunzip idmapping_selected.tab.gz &
 
 # indexing the fasta database
-# update 4/4/19: KoKo's launcher_creator is having trouble with some of the python/anaconda modules, which blast uses
-# instead of loading the blast module first, create the job script, then add the module load statement into the script manually
+module load blast
 echo "makeblastdb -in uniprot_sprot.fasta -dbtype prot" >mdb
-launcher_creator.py -j mdb -n mdb -q shortq7 -t 2:00:00 -e mstudiva@fau.edu
-nano mdb.slurm
-# add 'module load blast' after the 'module load launcher' line
-# save with ctrl + x
+launcher_creator.py -j mdb -n mdb -q shortq7 -t 6:00:00 -e studivanms@gmail.com
 sbatch mdb.slurm
-# when it's finished, run:
-module unload blast
 
 # splitting the transcriptome into 190 chunks
 splitFasta.pl Mcavernosa_Cladocopium.fasta 190
 
 # blasting all 190 chunks to uniprot in parallel, 4 cores per chunk
 ls subset* | perl -pe 's/^(\S+)$/blastx -query $1 -db uniprot_sprot\.fasta -evalue 0\.0001 -num_threads 4 -num_descriptions 5 -num_alignments 5 -out $1.br/'>bl
-launcher_creator.py -j bl -n blast -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
-nano blast.slurm
-# add 'module load blast' after the 'module load launcher' line
-# save with ctrl + x
+launcher_creator.py -j bl -n blast -t 6:00:00 -q shortq7 -e studivanms@gmail.com
 sbatch blast.slurm
 
 # watching progress:
 grep "Query= " subset*.br | wc -l
 # you should end up with the same number of queries as sequences from the seq_stats script (90980 sequences)
-
-# when it's finished, run:
-module unload blast
 
 # combining all blast results
 cat subset*br > myblast.br
@@ -123,7 +128,7 @@ cat Mcavernosa_Cladocopium.fasta | perl -pe 's/>Cladocopium(\d+)(\S+).+/>Cladoco
 #-------------------------
 # extracting coding sequences and corresponding protein translations:
 echo "perl ~/bin/CDS_extractor_v2.pl Mcavernosa_Cladocopium_iso.fasta myblast.br allhits bridgegaps" >cds
-launcher_creator.py -j cds -n cds -l cddd -t 2:00:00 -q shortq7 -e mstudiva@fau.edu
+launcher_creator.py -j cds -n cds -l cddd -t 6:00:00 -q shortq7 -e studivanms@gmail.com
 sbatch cddd
 
 # use the stream editor to remove all instances of "gene=" from the query IDs in the CDS_extractor outputs
@@ -144,16 +149,9 @@ gunzip 248.prots.fa.gz
 
 module load blast
 makeblastdb -in Mcavernosa_Cladocopium_iso.fasta -dbtype nucl
-module unload blast
 echo 'tblastn -query 248.prots.fa -db Mcavernosa_Cladocopium_iso.fasta -evalue 1e-10 -outfmt "6 qseqid sseqid evalue bitscore qcovs" -max_target_seqs 1 -num_threads 12 >Mcavernosa_Cladocopium_248.brtab' >bl248
-launcher_creator.py -j bl248 -n bl -l blj -q shortq7 -t 02:00:00 -e mstudiva@fau.edu
-nano blj
-# add 'module load blast' after the 'module load launcher' line
-# save with ctrl + x
+launcher_creator.py -j bl248 -n bl -l blj -q shortq7 -t 06:00:00 -e studivanms@gmail.com
 sbatch blj
-
-# when it's finished, run:
-module unload blast
 
 # calculating fraction of represented KOGs:
 cat Mcavernosa_Cladocopium_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | wc -l | awk '{print $1/248}'
@@ -212,8 +210,7 @@ wget https://www.genome.jp/tools/kaas/files/dl/1556130193/query.ko
 cat query.ko | awk '{if ($2!="") print }' > Mcavernosa_Cladocopium_iso2kegg.tab
 
 # the KEGG mapping result can be explored for completeness of transcriptome in terms of genes found,
-# use 'html' output link from KAAS result page, see how many proteins you have for conserved complexes and pathways,
-# such as ribosome, spliceosome, proteasome etc
+# use 'html' output link from KAAS result page, see how many proteins you have for conserved complexes and pathways, such as ribosome, spliceosome, proteasome etc
 
 #------------------------------
 # move the very large idmapping_selected.tab to backup
