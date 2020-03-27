@@ -1,7 +1,7 @@
 # Transcriptome Annotation, version March 20, 2020
 # Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (studivanms@gmail.com)
 # for use in generating transcriptome annotation files for Montastraea cavernosa
-# also includes the concatention of M. cavernosa and Cladocopium sp. (formerly Symbiodinium Clade C) transcriptomes
+# also includes the concatention of M. cavernosa and Cladocopium spp. (formerly Symbiodinium Clade C) transcriptomes
 
 #------------------------------
 # BEFORE STARTING, replace, in this whole file:
@@ -31,9 +31,9 @@ git clone https://github.com/z0on/emapper_to_GOMWU_KOGMWU.git
 mv emapper_to_GOMWU_KOGMWU/* .
 rm -rf emapper_to_GOMWU_KOGMWU
 
-git clone https://github.com/mstudiva/Mcav-Annotated-Transcriptome
-mv Mcav-Annotated-Transcriptome/* .
-rm -rf Mcav-Annotated-Transcriptome
+git clone https://github.com/mstudiva/Mcav-Cladocopium-Annotated-Transcriptome.git
+mv Mcav-Cladocopium-Annotated-Transcriptome/* .
+rm -rf Mcav-Cladocopium-Annotated-Transcriptome
 
 # creating backup directory
 mkdir backup
@@ -55,7 +55,7 @@ tar -xzf Mcavernosa_genome.tgz
 cp Mcav_genome/Mcavernosa_annotation/Mcavernosa.maker.transcripts.fasta .
 mv Mcavernosa.maker.transcripts.fasta Mcavernosa.fasta
 
-# Cladocopium sp. (formerly Symbiodinium Clade C) transcriptome as of November 2017
+# Cladocopium spp. (formerly Symbiodinium Clade C) transcriptome as of November 2017
 wget http://sites.bu.edu/davieslab/files/2017/11/CladeC_Symbiodinium_transcriptome.zip
 unzip CladeC_Symbiodinium_transcriptome.zip
 cp CladeC_Symbiodinium_transcriptome/davies_cladeC_feb.fasta .
