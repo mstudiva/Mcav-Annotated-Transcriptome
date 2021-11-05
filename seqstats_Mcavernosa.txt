@@ -1,0 +1,13 @@
+
+Mcavernosa.fasta
+-------------------------
+25142 sequences.
+1420 average length.
+43960 maximum length.
+75 minimum length.
+N50 = 2020
+35.7 Mb altogether (35692498 bp).
+0 ambiguous Mb. (1637 bp, 0%)
+0 Mb of Ns. (1637 bp, 0%)
+-------------------------
+
